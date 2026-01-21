@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Калкулатор — Пътна помощ (без ДДС)</title>
+  <meta name="description" content="Калкулатор за цена на репатрак — всички цени са за двете посоки и без ДДС. Възможно плащане: POS, Revolut." />
+  <link rel="canonical" href="https://roadasistancesofia.bg/kalkulator.html">
+  <style>
+    :root{--primary:#FF6B00;--secondary:#1a1a2e;--accent:#FFD700;--light:#f8f9fa;--dark:#0f0f1e;--gradient:linear-gradient(135deg,#FF6B00 0%,#FF8C00 100%);--green:#28a745;--blue:#1877f2;--muted:#6b7280}
+    *{margin:0;padding:0;box-sizing:border-box}html,body{height:100%}
+    body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--dark);color:var(--light);overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;height:auto;display:block}
+    /* HERO */
+    .hero{position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0f0f1e 0%,#1a1a2e 100%);overflow:hidden;padding:2rem 1rem}
+    .hero::before{content:'';position:absolute;width:150%;height:150%;background:radial-gradient(circle,rgba(255,107,0,0.06) 0%,transparent 70%);pointer-events:none}
+    .hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:900px;width:100%}
+    .logo{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;background:var(--gradient);-webkit-background-clip:text;color:transparent;margin-bottom:1rem;animation:slideDown 1s ease-out}
+    @keyframes slideDown{from{opacity:0;transform:translateY(-50px)}to{opacity:1;transform:translateY(0)}}
+    .hero h1{font-size:clamp(2rem,6vw,3rem);font-weight:800;margin-bottom:1rem;animation:slideUp 1s ease-out 0.2s both;line-height:1.2}
+    @keyframes slideUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+    .hero-subtitle{font-size:clamp(1rem,2.5vw,1.25rem);color:var(--accent);margin-bottom:1.25rem;animation:fadeIn 1s ease-out 0.4s both}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    /* Buttons & floating */
+    .floating-buttons{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:12px;z-index:1000}
+    .floating-btn{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:white;box-shadow:0 6px 18px rgba(0,0,0,0.35);transition:transform .2s ease;border:none}
+    .floating-btn:hover{transform:scale(1.06)}
+    .phone-btn{background:var(--gradient)}
+    .location-btn{background:var(--green)}
+    /* Container & form */
+    .container{max-width:900px;margin:1.25rem auto;padding:1.25rem;background:#fff;border-radius:12px;box-shadow:0 6px 18px rgba(11,11,27,0.04);color:var(--dark)}
+    label{display:block;font-weight:700;margin-bottom:.5rem}
+    input,select{width:100%;padding:12px;border:2px solid #e6eef6;border-radius:10px;margin-bottom:1rem;background:#fff}
+    .checkbox-group{display:flex;align-items:center;gap:1.2rem;justify-content:flex-start;padding:12px;background:#fff5f0;border-radius:10px;margin-bottom:1rem;max-width:520px;margin-left:auto;margin-right:auto;}
+    .checkbox-col{display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem;width:100%}
+    .checkbox-row{display:flex;align-items:center;width:100%;gap:1.2rem;}
+    .checkbox-row input[type="checkbox"]{min-width:22px;min-height:22px;}
+    .checkbox-row label{margin:0;text-align:left;flex:1;}
+    .number-input{display:flex;gap:8px;align-items:center;justify-content:center;min-width:90px;}
+    .checkbox-label-row label{margin:0;flex:1;text-align:left}
+    .checkbox-label-row input[type="checkbox"]{margin-left:1rem;min-width:22px;min-height:22px;}
+    .number-input{display:flex;gap:8px;align-items:center}
+    .number-input input{width:56px;text-align:center;border-radius:8px;padding:8px}
+    .calc-btn{width:100%;padding:16px;background:var(--gradient);color:#fff;border:none;border-radius:12px;font-weight:800;cursor:pointer;font-size:1.2rem;transition:background .2s}
+    .calc-btn:focus{outline:3px solid rgba(255,107,0,0.15)}
+    .calc-btn:hover{background:linear-gradient(135deg,#FF8C00 0%,#FF6B00 100%)}
+    .final-price-card{background:linear-gradient(135deg,#d4edda,#bde5c9);padding:1rem;border-radius:12px;text-align:center;margin-top:1rem}
+    .price{font-size:2.6rem;font-weight:900}
+    .breakdown{margin-top:1rem;padding:1rem;background:#fff;border-radius:10px}
+    .breakdown-item{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px dashed #eee}
+    .note{color:var(--muted);font-size:.95rem;margin-top:.5rem}
+    /* FAQ common styles (project-wide) */
+    .faq-container{max-width:800px;margin:0 auto}
+    .faq-item{margin-bottom:1rem;border:1px solid rgba(255,107,0,0.1);border-radius:8px;background:rgba(26,26,46,0.9)}
+    .faq-item summary{padding:1rem;cursor:pointer;font-weight:600;color:var(--accent)}
+    .faq-item summary:hover{background:rgba(255,107,0,0.05)}
+    .faq-answer p{margin:0}
+    /* Footer & theme */
+    footer{padding:1.2rem;text-align:center;background:var(--secondary);color:#cfcfcf;margin-top:1.25rem;border-top:1px solid rgba(255,255,255,0.02)}
+    /* Responsive */
+    @media (max-width:768px){.hero{padding:2rem 1rem}.floating-buttons{bottom:14px}}
+    @media (max-width:480px){.hero h1{font-size:1.4rem}.logo{font-size:1.3rem}}
+    .skip-link:focus{position:static;left:0;width:auto;height:auto;display:inline-block;padding:.5rem;background:#fff;color:var(--primary);border-radius:6px}
+  </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://roadasistancesofia.bg/#website",
+          "url": "https://roadasistancesofia.bg/",
+          "name": "Пътна помощ - Костинброд"
+        },
+        {
+          "@type": "AutomotiveBusiness",
+          "@id": "https://roadassistancesofia.bg/#organization",
+          "name": "Пътна Помощ Борисови Ауто ЕООД",
+          "alternateName": "Борисови Ауто",
+          "telephone": "+359887999175",
+          "url": "https://roadassistancesofia.bg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Латин Колев 1д",
+            "addressLocality": "София",
+            "postalCode": "1000",
+            "addressRegion": "София-град",
+            "addressCountry": "BG"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://roadasistancesofia.bg/kalkulator.html#webpage",
+          "url": "https://roadasistancesofia.bg/kalkulator.html",
+          "isPartOf": { "@id": "https://roadasistancesofia.bg/#website" },
+          "name": "Калкулатор - Пътна помощ"
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "@id": "https://roadasistancesofia.bg/kalkulator.html#price-range",
+      "name": "Диапазон цени - Репатрак",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": 40,
+        "highPrice": 500,
+        "priceCurrency": "EUR"
+      }
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" onfocus="this.style.position='static';this.style.left='0';this.style.width='auto';">Прескочи към съдържание</a>
+
+  <!-- Floating action buttons -->
+  <div class="floating-buttons" aria-hidden="false">
+    <a href="tel:0887999175" class="floating-btn phone-btn" aria-label="Обадете се">📞</a>
+    <button onclick="sendLocation()" class="floating-btn location-btn" aria-label="Изпратете локация">📍</button>
+  </div>
+
+  <!-- HERO section -->
+  <section class="hero" role="region" aria-label="Херо">
+    <div class="hero-content">
+      <div class="logo">🚗 БОРИСОВИ АУТО</div>
+      <h1>Калкулатор за цена — Пътна помощ</h1>
+      <p class="hero-subtitle">Изчислете точната цена за репатрак, смяна на гума или доставка на гориво. Всички цени са в двете посоки и без ДДС. Нощна надбавка 22:00–07:00: +30%.</p>
+      <div class="social-links" role="navigation" aria-label="Връзки">
+        <a class="social-btn facebook-btn" href="https://www.facebook.com/profile.php?id=61572449813260" target="_blank" rel="noopener">Харесайте ни във Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Global sendLocation used by onclick on floating location button
+    window.sendLocation = function(){
+      if(!navigator.geolocation){ alert('Геолокацията не е поддържана в този браузър.'); return; }
+      navigator.geolocation.getCurrentPosition(function(pos){
+        const lat = pos.coords.latitude, lon = pos.coords.longitude;
+        const locationUrl = 'https://www.google.com/maps?q=' + lat + ',' + lon;
+        if(/Mobi|Android/i.test(navigator.userAgent)){
+          window.location.href = 'sms:0887999175?body=' + encodeURIComponent('Нуждая се от помощ! Моята локация: ' + locationUrl);
+        } else {
+          navigator.clipboard?.writeText(locationUrl).then(()=> alert('Локацията е копирана. Изпратете я на 0887 999 175.'), ()=> alert('Копирайте локацията: ' + locationUrl));
+        }
+      }, ()=> alert('Моля, разрешете достъп до локацията.'));
+    };
+  </script>
+
+  <main id="main" class="container" role="main">
+    <div class="form-group">
+      <label for="serviceType">Тип услуга</label>
+      <select id="serviceType">
+        <option value="towing" selected>Пътна помощ / Репатриране</option>
+        <option value="fuel">Доставка на гориво</option>
+        <option value="tire">Смяна на гума</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="distance">Разстояние в ЕДНАТА посока (км)</label>
+      <input id="distance" type="number" min="0.1" step="0.1" placeholder="Напр. 45">
+    </div>
+
+    <div class="form-group">
+      <label for="weight">Тегло на МПС</label>
+      <select id="weight">
+        <option value="">Изберете тегло</option>
+        <option value="1500">До 1500 кг (лек автомобил)</option>
+        <option value="2000">1500–2000 кг</option>
+        <option value="over2000">Над 2000 кг (джип, бус, каравани)</option>
+      </select>
+    </div>
+
+    <h3 style="color:var(--primary)">Допълнителни условия</h3>
+
+
+    <div class="checkbox-group">
+      <div class="checkbox-row">
+        <input type="checkbox" id="noHook">
+        <div class="number-input" style="visibility:hidden;"></div>
+        <label for="noHook">Липса на кука (+5 € / 9.78 лв)</label>
+      </div>
+    </div>
+
+    <div class="checkbox-group">
+      <div class="checkbox-row">
+        <input type="checkbox" id="blockedTire">
+        <div class="number-input"><button type="button" aria-label="Намали броя на гумите" onclick="changeTire(-1)">−</button><input id="tireCount" type="number" value="0" min="0" max="4" readonly aria-live="polite"><button type="button" aria-label="Увеличи броя на гумите" onclick="changeTire(1)">+</button></div>
+        <label for="blockedTire">Блокирала/липсваща гума (+20 € / 39.12 лв на брой)</label>
+      </div>
+    </div>
+
+    <div class="checkbox-group">
+      <div class="checkbox-row">
+        <input type="checkbox" id="delay">
+        <div class="number-input"><button type="button" aria-label="Намали часа на забавяне" onclick="changeDelay(-1)">−</button><input id="delayHours" type="number" value="0" min="0" readonly aria-live="polite"><button type="button" aria-label="Увеличи часа на забавяне" onclick="changeDelay(1)">+</button></div>
+        <label for="delay">Забавяне на място (+15 € / 29.34 лв на час)</label>
+      </div>
+    </div>
+
+    <div class="checkbox-group">
+      <div class="checkbox-row">
+        <input type="checkbox" id="heavyAccident">
+        <div class="number-input" style="visibility:hidden;"></div>
+        <label for="heavyAccident">Тежка катастрофа (+75 € / 146.69 лв)</label>
+      </div>
+    </div>
+    <div class="checkbox-group">
+      <div class="checkbox-row">
+        <input type="checkbox" id="ditch">
+        <div class="number-input" style="visibility:hidden;"></div>
+        <label for="ditch">Изваждане от канавка (+75 € / 146.69 лв)</label>
+      </div>
+    </div>
+    <div class="checkbox-group">
+      <div class="checkbox-row">
+        <input type="checkbox" id="night">
+        <div class="number-input" style="visibility:hidden;"></div>
+        <label for="night">Нощна услуга 22:00–07:00 (+30%)  </label>
+      </div>
+    </div>
+
+    <button class="calc-btn" id="calc-btn" onclick="calculate()">ИЗЧИСЛИ ТОЧНАТА ЦЕНА</button>
+
+    <div id="result" style="display:none" aria-live="polite" aria-atomic="true">
+      <div class="final-price-card">
+        <div class="price" id="totalEUR">0.00 €</div>
+        <div class="note" id="totalBGN">0.00 лв</div>
+      </div>
+      <div class="breakdown" id="breakdown"></div>
+      <a href="tel:+359887999175" style="display:inline-block;margin-top:1rem;padding:10px 18px;background:#28a745;color:#fff;border-radius:999px;text-decoration:none;font-weight:700">ОБАДИ СЕ СЕГА</a>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>Пътна Помощ Борисови Ауто ЕООД</strong></p>
+    <p>ул. Латин Колев 1д, София 1000</p>
+    <p>Тел: 0887 999 175</p>
+    <p>© 2021–2026 Всички права запазени</p>
+  </footer>
+
+  
+
+  <script>
+    // Всички цени са за двете посоки и без ДДС
+    const RATE = 1.95583; // EUR -> BGN
+    const RATES = {
+      small: { perKm: 0.80, min: 40 },
+      medium: { perKm: 0.87, min: 45 },
+      large: { perKm: 0.97, min: 50 }
+    };
+
+    function changeTire(delta){ const inp = document.getElementById('tireCount'); let v = parseInt(inp.value)||0; v = Math.min(4, Math.max(0, v+delta)); inp.value = v; document.getElementById('blockedTire').checked = v>0; }
+    function changeDelay(delta){ const inp = document.getElementById('delayHours'); let v = parseInt(inp.value)||0; v = Math.max(0, v+delta); inp.value = v; document.getElementById('delay').checked = v>0; }
+
+
+
+    function calculate(){
+      const distance = parseFloat(document.getElementById('distance').value) || 0;
+      const service = document.getElementById('serviceType').value;
+      const weight = document.getElementById('weight').value;
+      if(distance <= 0){ alert('Моля, въведете разстояние!'); return; }
+      if(service==='towing' && !weight){ alert('Моля, изберете тегло на автомобила!'); return; }
+
+      const totalKm = distance * 2; // двете посоки
+      let base = 0;
+      if(service === 'towing'){
+        if(weight === '1500') base = Math.max(RATES.small.min, totalKm * RATES.small.perKm);
+        else if(weight === '2000') base = Math.max(RATES.medium.min, totalKm * RATES.medium.perKm);
+        else if(weight === 'over2000') base = Math.max(RATES.large.min, totalKm * RATES.large.perKm);
+      } else {
+        base = Math.max(30, totalKm * 0.8);
+      }
+
+      let total = base;
+      let breakdown = '';
+      breakdown += `<div class="breakdown-item"><span>Базова цена (две посоки, без ДДС)</span><span>${base.toFixed(2)} €<br>(${(base*RATE).toFixed(2)} лв)</span></div>`;
+
+      if(document.getElementById('noHook').checked){ total += 5; breakdown += `<div class="breakdown-item"><span>Такса за липса на кука</span><span>5.00 €<br>(${(5*RATE).toFixed(2)} лв)</span></div>`; }
+      const tires = parseInt(document.getElementById('tireCount').value)||0; if(tires>0){ const c = tires*20; total += c; breakdown += `<div class="breakdown-item"><span>Липсваща/блокирала гума (x${tires})</span><span>${c.toFixed(2)} €<br>(${(c*RATE).toFixed(2)} лв)</span></div>`; }
+      const hours = parseInt(document.getElementById('delayHours').value)||0; if(hours>0){ const c = hours*15; total += c; breakdown += `<div class="breakdown-item"><span>Забавяне (x${hours}ч)</span><span>${c.toFixed(2)} €<br>(${(c*RATE).toFixed(2)} лв)</span></div>`; }
+      if(document.getElementById('heavyAccident').checked){ total += 75; breakdown += `<div class="breakdown-item"><span>Тежка катастрофа</span><span>75.00 €<br>(${(75*RATE).toFixed(2)} лв)</span></div>`; }
+      if(document.getElementById('ditch').checked){ total += 75; breakdown += `<div class="breakdown-item"><span>Изваждане от канавка</span><span>75.00 €<br>(${(75*RATE).toFixed(2)} лв)</span></div>`; }
+
+
+      // Нощна надбавка се прилага само ако е избрана ръчно
+      if(document.getElementById('night').checked){ const surcharge = total * 0.30; total += surcharge; breakdown += `<div class="breakdown-item"><span>Нощна надбавка (+30%)</span><span>${surcharge.toFixed(2)} €<br>(${(surcharge*RATE).toFixed(2)} лв)</span></div>`; }
+
+      breakdown += `<div class="breakdown-item" style="font-weight:800"><span>КРАЙНА ЦЕНА (без ДДС)</span><span>${total.toFixed(2)} €<br>(${(total*RATE).toFixed(2)} лв)</span></div>`;
+
+      document.getElementById('totalEUR').innerText = total.toFixed(2) + ' €';
+      document.getElementById('totalBGN').innerText = (total*RATE).toFixed(2) + ' лв';
+      document.getElementById('breakdown').innerHTML = breakdown;
+      document.getElementById('result').style.display = 'block';
+      document.getElementById('result').scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  </script>
+</body>
+</html>
