@@ -10,7 +10,44 @@ const server = http.createServer((req, res) => {
       res.end('File not found');
       return;
     }
-    res.writeHead(200, { 'Content-Type': 'text/html' });
+    const ext = path.extname(filePath);
+    let contentType = 'text/html';
+    switch (ext) {
+      case '.css':
+        contentType = 'text/css';
+        break;
+      case '.js':
+        contentType = 'application/javascript';
+        break;
+      case '.json':
+        contentType = 'application/json';
+        break;
+      case '.png':
+        contentType = 'image/png';
+        break;
+      case '.jpg':
+      case '.jpeg':
+        contentType = 'image/jpeg';
+        break;
+      case '.webp':
+        contentType = 'image/webp';
+        break;
+      case '.svg':
+        contentType = 'image/svg+xml';
+        break;
+      case '.woff2':
+        contentType = 'font/woff2';
+        break;
+      case '.txt':
+        contentType = 'text/plain';
+        break;
+      case '.xml':
+        contentType = 'application/xml';
+        break;
+      default:
+        contentType = 'text/html';
+    }
+    res.writeHead(200, { 'Content-Type': contentType });
     res.end(data);
   });
 });
