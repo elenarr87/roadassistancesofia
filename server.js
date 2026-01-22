@@ -47,7 +47,14 @@ const server = http.createServer((req, res) => {
       default:
         contentType = 'text/html';
     }
-    res.writeHead(200, { 'Content-Type': contentType });
+    const headers = {
+      'Content-Type': contentType,
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+      'Content-Security-Policy-Report-Only': "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; report-uri /csp-report"
+    };
+    res.writeHead(200, headers);
     res.end(data);
   });
 });
