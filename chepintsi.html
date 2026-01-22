@@ -6,7 +6,9 @@
   <meta name="theme-color" content="#FF6B00" />
   <title>Борисови Ауто — Пътна помощ в Чепинци | Репатрак и евакуация 24/7 | 0887 999 175</title>
   <meta name="description" content="Репатрак и експресна помощ в Чепинци — пускане на ток, транспорт до сервиз и аварийна помощ 24/7." />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Пътна Помощ Борисови Ауто ЕООД" />
+  <meta name="keywords" content="пътна помощ Чепинци, репатрак Чепинци, смяна гума Чепинци, доставка гориво Чепинци, пътна помощ 24/7 Чепинци, лицензирана пътна помощ Чепинци, Борисови Ауто Чепинци" />
   <link rel="canonical" href="https://roadassistancesofia.bg/chepintsi.html" />
 
   <!-- Open Graph -->
@@ -15,6 +17,8 @@
   <meta property="og:title" content="Борисови Ауто — Пътна помощ Чепинци | Репатрак 24/7" />
   <meta property="og:description" content="Репатрак и експресна помощ в Чепинци — пускане на ток и транспорт до сервиз." />
   <meta property="og:image" content="/images/dark.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="bg_BG" />
   <meta property="og:site_name" content="Пътна Помощ Борисови Ауто" />
 
@@ -30,8 +34,8 @@
   <meta name="ICBM" content="42.72,23.42" />
 
   <!-- Icons & fonts -->
-  <link rel="icon" href="/images/dark.webp" type="image/webp" />
-  <link rel="apple-touch-icon" href="/images/dark.webp" />
+  <link rel="icon" href="/images/red.webp" type="image/webp" />
+  <link rel="apple-touch-icon" href="/images/red.webp" />
   
   
   <link rel="stylesheet" href="assets/inter-font.css">
@@ -45,35 +49,51 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "AutomotiveBusiness",
-        "@id": "https://roadassistancesofia.bg/#organization",
-        "name": "Пътна Помощ Борисови Ауто ЕООД",
-        "alternateName": "Борисови Ауто",
-        "image": [
-          "/images/dark.webp",
-          "/images/ive.webp",
-          "/images/red.webp"
-        ],
-        "logo": "/images/dark.webp",
-        "url": "https://roadassistancesofia.bg",
-        "telephone": "+359887999175",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "ул. Латин Колев 1д",
-          "addressLocality": "София",
-          "postalCode": "1000",
-          "addressCountry": "BG"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 42.697708,
-          "longitude": 23.321868
-        },
-        "areaServed": [
-          {"@type":"Place","name":"Чепинци"}
-        ],
-        "paymentAccepted": "Cash, Credit Card, Revolut",
-        "currenciesAccepted": "BGN, EUR"
+            "@type": "AutomotiveBusiness",
+              "@id": "https://roadassistancesofia.bg/#organization",
+              "name": "Пътна Помощ Борисови Ауто ЕООД",
+              "alternateName": "Борисови Ауто",
+              "image": [
+                "https://roadassistancesofia.bg/images/dark.webp",
+                "https://roadassistancesofia.bg/images/ive.webp",
+                "https://roadassistancesofia.bg/images/red.webp",
+                "https://roadassistancesofia.bg/images/mot.webp",
+                "https://roadassistancesofia.bg/images/pik.webp"
+              ],
+              "logo": "https://roadassistancesofia.bg/images/dark.webp",
+              "url": "https://roadassistancesofia.bg",
+              "telephone": "+359887999175",
+              "contactPoint": [{ "@type": "ContactPoint", "telephone": "+359887999175", "contactType": "customer service", "areaServed": "BG", "availableLanguage": "bg" }],
+              "priceRange": "€€",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "ул. Латин Колев 1д",
+                "addressLocality": "София",
+                "postalCode": "1000",
+                "addressCountry": "BG"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 42.697708,
+                "longitude": 23.321868
+              },
+              "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59" },
+              "sameAs": ["https://www.facebook.com/profile.php?id=61572449813260","https://maps.app.goo.gl/SNhyh8RmSehkzkZY0"],
+              "areaServed": [ { "@type": "Place", "name": "Чепинци", "geo": {"@type":"GeoCoordinates","latitude":42.72,"longitude":23.42} } ],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Услуги пътна помощ в Чепинци",
+                "itemListElement": [
+                  {"@type":"Offer","itemOffered":{"@type":"Service","name":"Денонощна пътна помощ 24/7","description":"Професионална помощ при аварии, ПТП и извънредни ситуации"}},
+                  {"@type":"Offer","itemOffered":{"@type":"Service","name":"Лицензиран транспорт на МПС","description":"Транспорт на автомобили, мотоциклети и мотори"}},
+                  {"@type":"Offer","itemOffered":{"@type":"Service","name":"Специализирана платформа","description":"Платформи за ниски и спортни автомобили"}},
+                  {"@type":"Offer","itemOffered":{"@type":"Service","name":"Доставка на гориво","description":"Доставка на гориво до място"}},
+                  {"@type":"Offer","itemOffered":{"@type":"Service","name":"Смяна на гума","description":"Смяна и монтаж на място"}},
+                  {"@type":"Offer","itemOffered":{"@type":"Service","name":"Изваждане от гаражи","description":"Изваждане и манипулация в тесни/подземни пространства"}}
+                ]
+              },
+              "paymentAccepted": "Cash, Credit Card, Revolut",
+              "currenciesAccepted": "BGN, EUR"
       },
       {
         "@type": "WebPage",
@@ -172,9 +192,9 @@
     h1{font-size:clamp(1.6rem,4.5vw,2.4rem);margin-bottom:.5rem;line-height:1.1}
     .hero-subtitle{color:var(--accent);margin-bottom:1rem}
 
-    .floating-buttons{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:12px;z-index:1000}
-    .floating-btn{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;border:none;box-shadow:0 8px 22px rgba(0,0,0,0.35);cursor:pointer}
-    .phone-btn{background:var(--gradient)}.location-btn{background:var(--green)}
+    .floating-buttons{position:fixed;bottom:80px;left:18px;z-index:1000;width:calc(100% - 36px);}
+    .floating-buttons .phone-btn{position:absolute;left:0;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#fff;border:none;box-shadow:0 8px 22px rgba(0,0,0,0.35);background:var(--gradient);cursor:pointer}
+    .floating-buttons .location-btn{position:absolute;right:18px;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#fff;border:none;box-shadow:0 8px 22px rgba(0,0,0,0.35);background:var(--green);cursor:pointer}
 
     section{padding:3rem 1rem;max-width:1200px;margin:0 auto}
     .section-title{font-weight:800;font-size:clamp(1.25rem,3vw,1.6rem);margin-bottom:1.25rem;background:var(--gradient);-webkit-background-clip:text;color:transparent}
@@ -190,7 +210,7 @@
 
     .area-link{color:var(--light);text-decoration:none}
 
-    .areas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:1.25rem}
+    .areas-grid{display:grid;grid-template-columns:repeat(2, 1fr);gap:.9rem;margin-top:1.25rem}
 
     .features{background:linear-gradient(135deg,rgba(26,26,46,0.95),rgba(255,107,0,0.03));padding:1rem;border-radius:10px;border:1px solid rgba(255,107,0,0.06)}
     .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
@@ -198,6 +218,7 @@
     .feature-icon{font-size:1.5rem;margin-bottom:.3rem}
 
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.6rem;margin-top:1rem}
+    .gallery picture,.gallery img{height:180px;display:block}
     .gallery img{height:150px;object-fit:cover;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.22);transition:transform .22s ease}
     .gallery img:hover{transform:scale(1.03)}
 
@@ -205,8 +226,10 @@
     footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1.5rem}
 
     @media (max-width:480px){
-      .gallery img{height:120px}
-      .floating-btn{width:56px;height:56px}
+      .gallery img{height:110px}
+      .floating-buttons{left:18px;right:18px}
+      .floating-buttons .phone-btn,.floating-buttons .location-btn{width:54px;height:54px}
+      .areas-grid{grid-template-columns:1fr}
     }
     .faq-container{max-width:800px;margin:0 auto}
     .faq-item{margin-bottom:1rem;border:1px solid rgba(255,107,0,0.1);border-radius:8px;background:rgba(26,26,46,0.9)}
@@ -308,9 +331,21 @@
         <source type="image/webp" srcset="images/dark.webp">
         <img src="images/dark.webp" alt="Пътна помощ Чепинци" loading="lazy" decoding="async" width="1200" height="630">
       </picture>
-      <img src="images/ive.webp" alt="Транспорт Борисови" loading="lazy" width="1200" height="630">
-      <img src="images/old.webp" alt="Смяна на гуми" loading="lazy" width="1200" height="630">
-      <img src="images/red.webp" alt="Репатриране" loading="lazy" width="1200" height="630">
+      <picture>
+        <source type="image/avif" srcset="images/ive.avif">
+        <source type="image/webp" srcset="images/ive.webp">
+        <img src="images/ive.webp" alt="Транспорт Борисови" loading="lazy" decoding="async" width="1200" height="630">
+      </picture>
+      <picture>
+        <source type="image/avif" srcset="images/mot.avif">
+        <source type="image/webp" srcset="images/mot.webp">
+        <img src="images/mot.webp" alt="Пътна помощ на място" loading="lazy" decoding="async" width="1200" height="630">
+      </picture>
+      <picture>
+        <source type="image/avif" srcset="images/pik.avif">
+        <source type="image/webp" srcset="images/pik.webp">
+        <img src="images/pik.webp" alt="Репатриране и транспорт" loading="lazy" decoding="async" width="1200" height="630">
+      </picture>
     </div>
   </section>
 
@@ -401,12 +436,13 @@
   </section>
 
   
-  <footer role="contentinfo">
-    <div style="display:flex;justify-content:space-between">
-      <a href="https://roadassistancesofia.bg/index.html" style="color:#fff">Начало</a>
-      <a href="https://www.facebook.com/profile.php?id=61572449813260" target="_blank" rel="noopener noreferrer" style="color:#fff">Facebook</a>
+  <footer role="contentinfo" style="padding:1rem;color:#cfcfcf;margin-top:1rem">
+    <div style="display:flex;justify-content:center;gap:0.6rem;align-items:center">
+      <a href="https://roadassistancesofia.bg/index.html" style="color:#fff;text-decoration:none;font-weight:600">Начало</a>
+      <span style="color:rgba(255,255,255,0.35)">|</span>
+      <a href="https://www.facebook.com/profile.php?id=61572449813260" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:none;font-weight:600">Facebook</a>
     </div>
-    <p>© 2026 Пътна Помощ "Борисови Ауто" ЕООД. Всички права запазени.</p>
+    <p style="text-align:center;color:#bdbdbd;margin-top:.5rem">© 2026 Пътна Помощ "Борисови Ауто" ЕООД. Всички права запазени.</p>
   </footer>
 
   <!-- Minimal non-blocking JS (smooth scroll, reveal, sendLocation) -->
