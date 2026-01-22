@@ -248,7 +248,9 @@ h1{font-size:clamp(1.6rem,4.5vw,2.2rem);margin-bottom:.5rem;line-height:1.1}
 .hero-subtitle{color:var(--accent);margin-bottom:1rem}
 
 /* Buttons & floating */
-.floating-buttons{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:12px;z-index:1000}
+.floating-buttons{position:fixed;bottom:18px;left:18px;z-index:1000}
+.floating-buttons .phone-btn{position:absolute;left:0}
+.floating-buttons .location-btn{position:absolute;right:18px}
 .floating-btn{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#fff;border:none;box-shadow:0 8px 22px rgba(0,0,0,0.32);cursor:pointer}
 .phone-btn{background:var(--gradient)}.location-btn{background:var(--green)}
 
@@ -291,11 +293,6 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
   </style>
 </head>
 <body>
-  <!-- Floating action buttons -->
-  <div class="floating-buttons" aria-hidden="false">
-    <a class="floating-btn phone-btn" href="tel:0887999175" aria-label="Обадете се">📞</a>
-    <button class="floating-btn location-btn" onclick="sendLocation()" aria-label="Изпратете локация">📍</button>
-  </div>
 
   <!-- HERO -->
   <section class="hero" aria-label="Херо">
@@ -306,7 +303,11 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
       <p><a href="https://www.facebook.com/profile.php?id=61572449813260" target="_blank" rel="noopener noreferrer" style="background:#1877F2;color:#fff;padding:.5rem 1rem;border-radius:8px;text-decoration:none;font-weight:700">Следвайте ни във Facebook</a></p>
     </div>
   </section>
-
+<!-- Floating action buttons -->
+  <div class="floating-buttons" aria-hidden="false">
+    <a class="floating-btn phone-btn" href="tel:0887999175" aria-label="Обадете се">📞</a>
+    <button class="floating-btn location-btn" onclick="sendLocation()" aria-label="Изпратете локация">📍</button>
+  </div>
   <!-- Services -->
   <section id="services" aria-labelledby="services-title">
     <h2 id="services-title" class="section-title">Нашите Услуги</h2>
@@ -316,6 +317,7 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
       <article class="service-card" data-service="specialized-platform"><div class="service-icon">🏎️</div><h3>Специализирана платформа</h3><p>Платформи за ниски и спортни автомобили, както и за катастрофирали МПС.</p></article>
       <article class="service-card" data-service="fuel-delivery"><div class="service-icon">⛽</div><h3>Доставка на гориво</h3><p>Доставка на гориво и помощ на място при нужда.</p></article>
       <article class="service-card" data-service="tire-change"><div class="service-icon">🛞</div><h3>Смяна на гума</h3><p>Смяна и монтаж на място — бързо и професионално.</p></article>
+      <article class="service-card" data-service="garage-extraction"><div class="service-icon">🅿️</div><h3>Изваждане от гаражи</h3><p>Изваждане и транспортиране от тесни и подземни пространства.</p></article>
     </div>
   </section>
 
@@ -456,7 +458,7 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
     <div class="areas-grid">
       <div class="service-card"><h3>Требич</h3><p>Пълно обслужване в Требич.</p></div>
       <div class="service-card"><h3><a href="ilienci.html" class="area-link">Илиенци</a></h3><p>Бърза реакция и транспорт.</p></div>
-      <div class="service-card"><h3><a href="mramor.html" class="area-link">Мрамор</a></h3><p>Лицензиран транспорт.</p></div>
+      <div class="service-card"><h3><a href="mramor.html" class="area-link">Мрамор</a></h3><p>Лицензиран транспорт и изваждане от гаражи.</p></div>
       <div class="service-card"><h3><a href="jiten.html" class="area-link">Житен</a></h3><p>Доставка на гориво и смяна на гуми.</p></div>
     </div>
   </section>
