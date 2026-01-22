@@ -293,7 +293,11 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
   </style>
 </head>
 <body>
-
+<!-- Floating action buttons -->
+  <div class="floating-buttons" aria-hidden="false">
+    <a class="floating-btn phone-btn" href="tel:0887999175" aria-label="Обадете се">📞</a>
+    <button class="floating-btn location-btn" onclick="sendLocation()" aria-label="Изпратете локация">📍</button>
+  </div>
   <!-- HERO -->
   <section class="hero" aria-label="Херо">
     <div class="hero-content">
@@ -303,11 +307,7 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
       <p><a href="https://www.facebook.com/profile.php?id=61572449813260" target="_blank" rel="noopener noreferrer" style="background:#1877F2;color:#fff;padding:.5rem 1rem;border-radius:8px;text-decoration:none;font-weight:700">Следвайте ни във Facebook</a></p>
     </div>
   </section>
-<!-- Floating action buttons -->
-  <div class="floating-buttons" aria-hidden="false">
-    <a class="floating-btn phone-btn" href="tel:0887999175" aria-label="Обадете се">📞</a>
-    <button class="floating-btn location-btn" onclick="sendLocation()" aria-label="Изпратете локация">📍</button>
-  </div>
+
   <!-- Services -->
   <section id="services" aria-labelledby="services-title">
     <h2 id="services-title" class="section-title">Нашите Услуги</h2>
