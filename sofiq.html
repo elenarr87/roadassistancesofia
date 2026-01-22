@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Борисови Ауто — Пътна помощ в София | Репатрак и помощ 24/7 | 0887 999 175</title>
   <meta name="description" content="24/7 репатрак и пътна помощ в София — бърза реакция, смяна на гума, доставка гориво и транспорт до сервиз." />
-  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="пътна помощ софия, репатрак софия, транспорт автомобили софия, смяна гуми софия, доставка гориво софия, пътна помощ 24/7 софия, евтина пътна помощ софия, бърза пътна помощ софия, лицензирана пътна помощ софия, борисови ауто софия" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Пътна Помощ Борисови Ауто ЕООД" />
   <link rel="canonical" href="https://roadassistancesofia.bg/sofiq.html" />
   <meta name="theme-color" content="#FF6B00">
 
@@ -15,6 +17,8 @@
   <meta property="og:title" content="Борисови Ауто — Пътна помощ София | Репатрак 24/7" />
   <meta property="og:description" content="24/7 репатрак и пътна помощ в София — бърза реакция, смяна на гума, доставка гориво." />
   <meta property="og:image" content="/images/dark.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="bg_BG" />
   <meta property="og:site_name" content="Пътна Помощ Борисови Ауто" />
 
@@ -30,8 +34,8 @@
   <meta name="ICBM" content="42.697708,23.321868" />
 
   <!-- Icons & fonts -->
-  <link rel="icon" href="/images/dark.webp" type="image/webp" />
-  <link rel="apple-touch-icon" href="/images/dark.webp" />
+  <link rel="icon" href="/images/red.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="/images/red.webp">
   
   
   <link rel="stylesheet" href="assets/inter-font.css">
@@ -45,18 +49,18 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": "AutomotiveBusiness",
         "@id": "https://roadassistancesofia.bg/#organization",
         "name": "Пътна Помощ Борисови Ауто ЕООД",
         "alternateName": "Борисови Ауто",
-        "url": "https://roadassistancesofia.bg",
-        "logo": "/images/dark.webp",
-        "telephone": "+359887999175",
         "image": [
-          "/images/dark.webp",
-          "/images/ive.webp",
-          "/images/red.webp"
+          "https://roadassistancesofia.bg/images/dark.webp",
+          "https://roadassistancesofia.bg/images/ive.webp",
+          "https://roadassistancesofia.bg/images/red.webp"
         ],
+        "logo": "https://roadassistancesofia.bg/images/dark.webp",
+        "url": "https://roadassistancesofia.bg",
+        "telephone": "+359887999175",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "ул. Латин Колев 1д",
@@ -68,6 +72,57 @@
           "@type": "GeoCoordinates",
           "latitude": 42.697708,
           "longitude": 23.321868
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61572449813260",
+          "https://maps.app.goo.gl/SNhyh8RmSehkzkZY0"
+        ],
+        "areaServed": [
+          {"@type":"Place","name":"София"}
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Услуги пътна помощ в София",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Денонощна пътна помощ 24/7 в София",
+                "description": "Професионална помощ при аварии, повреди или други проблеми на пътя в София"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Лицензиран транспорт на МПС в София",
+                "description": "Транспорт на автомобили, мотоциклети, ATV и UTV в София"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Доставка на гориво в София",
+                "description": "Доставяме гориво директно до вас в София"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Смяна на гума в София",
+                "description": "Бърза и професионална смяна на гума на място в София"
+              }
+            }
+          ]
         },
         "paymentAccepted": "Cash, Credit Card, Revolut",
         "currenciesAccepted": "BGN, EUR"
@@ -105,6 +160,19 @@
         "openingHours": "Mo-Su 00:00-23:59",
         "telephone": "+359887999175",
         "url": "https://roadassistancesofia.bg/sofiq.html"
+      },
+      {
+        "@type": "Service",
+        "name": "Пътна помощ в София",
+        "description": "Професионална денонощна пътна помощ, репатрак, транспорт на МПС и аварийна помощ в София 24/7",
+        "provider": {"@id": "https://roadassistancesofia.bg/#organization"},
+        "areaServed": {"@type": "Place", "name": "София"},
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "EUR",
+          "price": "0.80",
+          "availability": "https://schema.org/InStock"
+        }
       },
       {
         "@type": "FAQPage",
@@ -187,9 +255,10 @@
     h1{font-size:clamp(1.6rem,4.5vw,2.4rem);margin-bottom:.5rem;line-height:1.1}
     .hero-subtitle{color:var(--accent);margin-bottom:1rem}
 
-    .floating-buttons{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:12px;z-index:1000}
-    .floating-btn{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#fff;border:none;box-shadow:0 8px 22px rgba(0,0,0,0.35);cursor:pointer}
+    .floating-buttons{position:fixed;left:0;right:0;bottom:calc(18px + env(safe-area-inset-bottom, 0px));z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:0 18px;pointer-events:none}
+    .floating-buttons .floating-btn{pointer-events:auto;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#fff;border:none;box-shadow:0 8px 22px rgba(0,0,0,0.32);cursor:pointer}
     .phone-btn{background:var(--gradient)}.location-btn{background:var(--green)}
+    .floating-buttons .phone-btn,.floating-buttons .location-btn{position:static}
 
     section{padding:3rem 1rem;max-width:1200px;margin:0 auto}
     .section-title{font-weight:800;font-size:clamp(1.25rem,3vw,1.6rem);margin-bottom:1.25rem;background:var(--gradient);-webkit-background-clip:text;color:transparent}
@@ -203,6 +272,7 @@
     .features{background:linear-gradient(135deg,rgba(26,26,46,0.95),rgba(255,107,0,0.03));padding:1rem;border-radius:10px;border:1px solid rgba(255,107,0,0.06)}
     .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.75rem}
     .feature-item{padding:.75rem;border-radius:8px;background:rgba(255,255,255,0.02);text-align:center}
+    .feature-icon{font-size:1.2rem;color:var(--accent);margin-bottom:.3rem}
 
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.6rem;margin-top:1rem}
     .gallery img{height:150px;object-fit:cover;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.22);transition:transform .22s ease}
@@ -218,9 +288,12 @@
     .faq-answer{padding:0 1rem 1rem;color:#d0d0d0}
     .faq-answer p{margin:0}
 
+    .areas-grid{display:grid;grid-template-columns:repeat(2, 1fr);gap:.9rem}
+
     @media (max-width:480px){
       .gallery img{height:120px}
-      .floating-btn{width:56px;height:56px}
+      .floating-btn{width:54px;height:54px}
+      .areas-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -237,7 +310,7 @@
       <div class="logo">🚗 БОРИСОВИ АУТО</div>
       <h1>Пътна Помощ — София (24/7)</h1>
       <p class="hero-subtitle">Репатрак, смяна на гума, доставка гориво и квалифицирана помощ на пътя. Обадете се: <strong>0887 999 175</strong></p>
-      <p><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" style="background:#1877F2;color:#fff;padding:.5rem 1rem;border-radius:8px;text-decoration:none;font-weight:700">Следвайте ни във Facebook</a></p>
+      <p><a href="https://www.facebook.com/profile.php?id=61572449813260" target="_blank" rel="noopener noreferrer" style="background:#1877F2;color:#fff;padding:.5rem 1rem;border-radius:8px;text-decoration:none;font-weight:700">Следвайте ни във Facebook</a></p>
     </div>
 
   </section>
@@ -316,9 +389,36 @@
         <source type="image/webp" srcset="images/dark.webp">
         <img src="images/dark.webp" alt="Пътна помощ София" loading="lazy" decoding="async" width="1200" height="630">
       </picture>
-      <img src="images/ive.webp" alt="Транспорт Борисови" loading="lazy" width="1200" height="630">
-      <img src="images/old.webp" alt="Смяна на гуми" loading="lazy" width="1200" height="630">
-      <img src="images/red.webp" alt="Репатриране" loading="lazy" width="1200" height="630">
+
+      <picture>
+        <source type="image/avif" srcset="images/ive.avif">
+        <source type="image/webp" srcset="images/ive.webp">
+        <img src="images/ive.webp" alt="Транспорт Борисови" loading="lazy" decoding="async" width="1200" height="630">
+      </picture>
+
+      <picture>
+        <source type="image/avif" srcset="images/old.avif">
+        <source type="image/webp" srcset="images/old.webp">
+        <img src="images/old.webp" alt="Смяна на гуми" loading="lazy" decoding="async" width="1200" height="630">
+      </picture>
+
+      <picture>
+        <source type="image/avif" srcset="images/red.avif">
+        <source type="image/webp" srcset="images/red.webp">
+        <img src="images/red.webp" alt="Репатриране" loading="lazy" decoding="async" width="1200" height="630">
+      </picture>
+
+      <picture>
+        <source type="image/avif" srcset="images/mot.avif">
+        <source type="image/webp" srcset="images/mot.webp">
+        <img src="images/mot.webp" alt="Мотоциклети" loading="lazy" decoding="async" width="1200" height="630">
+      </picture>
+
+      <picture>
+        <source type="image/avif" srcset="images/pik.avif">
+        <source type="image/webp" srcset="images/pik.webp">
+        <img src="images/pik.webp" alt="Пикап помощ" loading="lazy" decoding="async" width="1200" height="630">
+      </picture>
     </div>
   </section>
 
@@ -386,12 +486,12 @@
 
   <!-- Areas -->
   <section id="areas" aria-labelledby="areas-title">
-    <h2 id="areas-title" class="section-title">Области на обслужване — София</h2>
+    <h2 id="areas-title" class="section-title">Област на обслужване — София</h2>
     <div class="areas-grid">
-      <div class="area-card"><h3>София</h3><p>Пълно обслужване в София.</p><a class="area-link" href="sofiq.html#services">Повече</a></div>
-      <div class="area-card"><h3><a href="noviiskar.html" class="area-link">Нови Искър</a></h3><p>Бърза реакция и транспорт.</p><a class="area-link" href="noviiskar.html#services">Повече</a></div>
-      <div class="area-card"><h3><a href="mroviane.html" class="area-link">Мировяне</a></h3><p>Изваждане от гаражи и транспорт.</p><a class="area-link" href="mroviane.html#services">Повече</a></div>
-      <div class="area-card"><h3><a href="podgumer.html" class="area-link">Подгумер</a></h3><p>Бърза реакция и доставка на услуги.</p><a class="area-link" href="podgumer.html#services">Повече</a></div>
+      <div class="service-card"><h3>Требич</h3><p>Пълно обслужване в Требич.</p></div>
+      <div class="service-card"><h3><a href="ilienci.html" class="area-link">Илиенци</a></h3><p>Бърза реакция и транспорт.</p></div>
+      <div class="service-card"><h3><a href="mramor.html" class="area-link">Мрамор</a></h3><p>Лицензиран транспорт и изваждане от гаражи.</p></div>
+      <div class="service-card"><h3><a href="jiten.html" class="area-link">Житен</a></h3><p>Доставка на гориво и смяна на гуми.</p></div>
     </div>
   </section>
 
@@ -412,7 +512,7 @@
   <footer role="contentinfo" style="padding:1rem;color:#cfcfcf;margin-top:1rem">
     <div style="display:flex;justify-content:space-between">
       <a href="https://roadassistancesofia.bg/index.html" style="color:#fff">Начало</a>
-      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" style="color:#fff">Facebook</a>
+      <a href="https://www.facebook.com/profile.php?id=61572449813260" target="_blank" rel="noopener noreferrer" style="color:#fff">Facebook</a>
     </div>
     <p style="text-align:center;color:#bdbdbd;margin-top:0.5rem">© 2026 Пътна Помощ "Борисови Ауто" ЕООД. Всички права запазени.</p>
   </footer>
