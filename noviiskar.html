@@ -6,7 +6,9 @@
   <meta name="theme-color" content="#FF6B00" />
   <title>Борисови Ауто — Пътна помощ в Нови Искър | Репатрак и помощ 24/7 | 0887 999 175</title>
   <meta name="description" content="24/7 репатрак и пътна помощ в Нови Искър — пристигане в кратък срок, квалифицирани техници." />
-  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="пътна помощ нови искър, репатрак нови искър, транспорт автомобили нови искър, смяна гуми нови искър, доставка гориво нови искър, пътна помощ 24/7 нови искър, евтина пътна помощ нови искър, бърза пътна помощ нови искър, лицензирана пътна помощ нови искър, борисови авто нови искър" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="author" content="Пътна Помощ Борисови Ауто ЕООД" />
   <link rel="canonical" href="https://roadassistancesofia.bg/noviiskar.html" />
 
   <!-- Open Graph / Twitter -->
@@ -15,6 +17,8 @@
   <meta property="og:title" content="Борисови Ауто — Пътна помощ Нови Искър | Репатрак 24/7" />
   <meta property="og:description" content="24/7 репатрак и пътна помощ в Нови Искър — пристигане в кратък срок, квалифицирани техници." />
   <meta property="og:image" content="/images/dark.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="/images/dark.webp" />
 
@@ -22,8 +26,8 @@
   <meta name="geo.region" content="BG-22" />
   <meta name="geo.placename" content="Нови Искър" />
 
-  <link rel="icon" href="/images/dark.webp" type="image/webp" />
-  <link rel="apple-touch-icon" href="/images/dark.webp" />
+  <link rel="icon" href="/images/red.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="/images/red.webp">
 
   <!-- Fonts (display=swap) -->
   
@@ -33,51 +37,136 @@
   <!-- FontAwesome Icons (local) -->
   <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 
-  <!-- Structured data (AutomotiveBusiness, WebSite/WebPage, Breadcrumb) -->
+  <!-- Structured data (Organization + WebPage + Breadcrumb) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AutomotiveBusiness",
-    "@id": "https://roadassistancesofia.bg/#organization",
-    "name": "Пътна Помощ Борисови Ауто ЕООД",
-    "alternateName": "Борисови Ауто",
-    "image": [
-      "/images/dark.webp",
-      "/images/ive.webp",
-      "/images/red.webp"
-    ],
-    "logo": "/images/dark.webp",
-    "url": "https://roadassistancesofia.bg",
-    "telephone": "+359887999175",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "ул. Латин Колев 1д",
-      "addressLocality": "София",
-      "postalCode": "1000",
-      "addressCountry": "BG"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "42.697708",
-      "longitude": "23.321868"
-    },
-    "areaServed": [
-      {"@type":"Place","name":"Нови Искър"},
-      {"@type":"Place","name":"Мировяне"},
-      {"@type":"Place","name":"Подгумер"},
-      {"@type":"Place","name":"Локорско"}
-    ],
-    "paymentAccepted": "Cash, Credit Card, Revolut",
-    "currenciesAccepted": "BGN, EUR"
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {"@type":"WebSite","@id":"https://roadassistancesofia.bg/#website","url":"https://roadassistancesofia.bg/","name":"Пътна Помощ Борисови Ауто"},
-      {"@type":"WebPage","@id":"https://roadassistancesofia.bg/noviiskar.html#webpage","url":"https://roadassistancesofia.bg/noviiskar.html","isPartOf":{"@id":"https://roadassistancesofia.bg/#website"},"name":"Пътна Помощ — Нови Искър","inLanguage":"bg-BG","mainEntity":{"@id":"https://roadassistancesofia.bg/#organization"}},
+    "@graph": [
+      {
+        "@type": "AutomotiveBusiness",
+        "@id": "https://roadassistancesofia.bg/#organization",
+        "name": "Пътна Помощ Борисови Ауто ЕООД",
+        "alternateName": "Борисови Ауто",
+        "image": [
+          "https://roadassistancesofia.bg/images/dark.webp",
+          "https://roadassistancesofia.bg/images/ive.webp",
+          "https://roadassistancesofia.bg/images/red.webp"
+        ],
+        "logo": "https://roadassistancesofia.bg/images/dark.webp",
+        "url": "https://roadassistancesofia.bg",
+        "telephone": "+359887999175",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ул. Латин Колев 1д",
+          "addressLocality": "София",
+          "postalCode": "1000",
+          "addressCountry": "BG"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 42.697708,
+          "longitude": 23.321868
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61572449813260",
+          "https://maps.app.goo.gl/SNhyh8RmSehkzkZY0"
+        ],
+        "areaServed": [
+          {"@type":"Place","name":"Нови Искър"}
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Услуги пътна помощ в Нови Искър",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Денонощна Пътна Помощ 24/7 в Нови Искър",
+                "description": "Професионална помощ при аварии, повреди или други проблеми на пътя в Нови Искър"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Лицензиран транспорт на МПС в Нови Искър",
+                "description": "Транспорт на автомобили, мотоциклети, ATV и UTV в Нови Искър"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Доставка на гориво в Нови Искър",
+                "description": "Доставяме гориво директно до вас в Нови Искър"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Смяна на гума в Нови Искър",
+                "description": "Бърза и професионална смяна на гума на място в Нови Искър"
+              }
+            }
+          ]
+        },
+        "paymentAccepted": "Cash, Credit Card, Revolut",
+        "currenciesAccepted": "BGN, EUR"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://roadassistancesofia.bg/#website",
+        "url": "https://roadassistancesofia.bg/",
+        "name": "Пътна Помощ Борисови Ауто",
+        "publisher": {"@id": "https://roadassistancesofia.bg/#organization"},
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://roadassistancesofia.bg/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://roadassistancesofia.bg/noviiskar.html#webpage",
+        "url": "https://roadassistancesofia.bg/noviiskar.html",
+        "inLanguage": "bg-BG",
+        "isPartOf": { "@id": "https://roadassistancesofia.bg/#website" },
+        "name": "Пътна Помощ — Нови Искър"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Начало","item":"https://roadassistancesofia.bg/"},
+          {"@type":"ListItem","position":2,"name":"Нови Искър","item":"https://roadassistancesofia.bg/noviiskar.html"}
+        ]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://roadassistancesofia.bg/noviiskar.html#localbusiness",
+        "name": "Пътна Помощ Борисови Ауто - Нови Искър",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Нови Искър",
+          "addressRegion": "София",
+          "addressCountry": "BG"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 42.81,
+          "longitude": 23.34
+        },
+        "openingHours": "Mo-Su 00:00-23:59",
+        "telephone": "+359887999175",
+        "url": "https://roadassistancesofia.bg/noviiskar.html"
+      },
       {
         "@type": "Service",
         "name": "Пътна помощ в Нови Искър",
@@ -109,36 +198,42 @@
               "@type": "Answer",
               "text": "Предлагаме денонощна пътна помощ, репатрак на МПС, смяна на гума, доставка на гориво, пускане на ток и лицензиран транспорт в Нови Искър."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Какво да направя при авария в Нови Искър?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "При авария в Нови Искър: осигурете безопасността си и на другите, включете аварийни светлини, поставете триъгълник за опасност. Обадете се на 0887 999 175 за професионална помощ. Не се опитвайте да ремонтирате сами тежки повреди."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какви са цените на услугите в Нови Искър?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Цените започват от 40 EUR за МПС до 1500 кг (0.80 EUR/км). За по-тежки автомобили цените са по-високи. Нощна такса +30%, допълнителни услуги като смяна на гума - 20 EUR. Плащане с POS или Revolut."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как да се свържа с вас за помощ в Нови Искър?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Обадете се на 0887 999 175 - работим 24/7. Посочете точната локация в Нови Искър и вида на проблема. Ще получите бърза помощ и точна информация за цените."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Какво е пътна помощ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Пътната помощ е спешна услуга за подпомагане на шофьори при аварии, повреди или други проблеми на пътя. Включва репатрак, смяна на гуми, доставка на гориво и други услуги 24/7."
+            }
           }
         ]
       }
     ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Начало","item":"https://roadassistancesofia.bg/"},{"@type":"ListItem","position":2,"name":"Нови Искър","item":"https://roadassistancesofia.bg/noviiskar.html"}]}
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Пътна Помощ Борисови Ауто - Нови Искър",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Нови Искър",
-      "addressRegion": "София",
-      "addressCountry": "BG"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 42.81,
-      "longitude": 23.34
-    },
-    "openingHours": "Mo-Su 00:00-23:59",
-    "telephone": "+359887999175",
-    "url": "https://roadassistancesofia.bg/noviiskar.html"
   }
   </script>
 
@@ -178,14 +273,15 @@
 
     /* Buttons & floating */
     .social-cta a{background:#1877F2;color:#fff;padding:10px 18px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;margin-top:.5rem}
-    .floating-buttons{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:20px;z-index:1000}
+    .floating-buttons{position:fixed;bottom:60px;left:18px;right:18px;display:flex;justify-content:space-between;z-index:1000}
     .floating-btn{width:70px;height:70px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;color:white;box-shadow:0 8px 25px rgba(0,0,0,0.4);cursor:pointer;border:none}
-    .phone-btn{background:var(--gradient)}.location-btn{background:var(--green)}
+    .phone-btn{background:var(--gradient);position:absolute;left:0}
+    .location-btn{background:var(--green);position:absolute;right:0}
 
     /* Sections */
     section{padding:3.2rem 1rem;max-width:1400px;margin:0 auto}
     .section-title{font-size:clamp(1.4rem,3.5vw,2rem);font-weight:800;text-align:center;margin-bottom:1.25rem;background:var(--gradient);-webkit-background-clip:text;color:transparent}
-    .services-grid,.areas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-top:1.25rem}
+    .services-grid,.areas-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:1.25rem}
 
     /* Cards */
     .service-card,.area-card{background:rgba(26,26,46,0.88);backdrop-filter:blur(6px);border-radius:14px;padding:1.6rem;border:1px solid rgba(255,107,0,0.06);transition:transform .28s ease,box-shadow .28s ease;text-align:left}
@@ -214,6 +310,9 @@
     @media (max-width:480px){
       h1{font-size:1.4rem}
       .logo{font-size:1.3rem}
+      .areas-grid{grid-template-columns:1fr}
+      .floating-btn{width:54px}
+      .gallery img{height:110px}
     }
     .faq-container{max-width:800px;margin:0 auto}
     .faq-item{margin-bottom:1rem;border:1px solid rgba(255,107,0,0.1);border-radius:8px;background:rgba(26,26,46,0.9)}
@@ -234,9 +333,9 @@
   <section class="hero" aria-label="Херо">
     <div class="hero-content">
       <div class="logo">🚗 БОРИСОВИ АУТО</div>
-      <p class="social-cta"><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Следвайте ни във Facebook</a></p>
       <h1>Пътна Помощ — Нови Искър (24/7)</h1>
       <p class="hero-subtitle">Професионална пътна помощ в Нови Искър: репатрак на МПС, аварийна помощ, смяна на гума, доставка на гориво, лицензиран транспорт и изваждане от гаражи 24/7. Бърза реакция при аварии и ПТП. Обадете се: <strong>0887 999 175</strong></p>
+      <p><a href="https://www.facebook.com/profile.php?id=61572449813260" target="_blank" rel="noopener noreferrer" style="background:#1877F2;color:#fff;padding:.5rem 1rem;border-radius:8px;text-decoration:none;font-weight:700">Следвайте ни във Facebook</a></p>
     </div>
 
   </section>
@@ -287,14 +386,12 @@
   <section id="gallery" aria-labelledby="gallery-title">
     <h2 id="gallery-title" class="section-title">Галерия</h2>
     <div class="gallery" aria-hidden="false">
-      <picture>
-        <source type="image/avif" srcset="images/dark.avif">
-        <source type="image/webp" srcset="images/dark.webp">
-        <img src="images/dark.webp" alt="Пътна помощ Мировяне" loading="lazy" decoding="async" width="1200" height="630">
-      </picture>
-      <img src="images/ive.webp" alt="Транспорт Борисови" loading="lazy" width="1200" height="630">
-      <img src="images/old.webp" alt="Смяна на гуми" loading="lazy" width="1200" height="630">
-      <img src="images/red.webp" alt="Репатриране" loading="lazy" width="1200" height="630">
+      <picture><source srcset="images/dark.avif" type="image/avif"><img src="images/dark.webp" alt="Пътна помощ Нови Искър" loading="lazy" width="1200" height="630"></picture>
+      <picture><source srcset="images/ive.avif" type="image/avif"><img src="images/ive.webp" alt="Транспорт Борисови" loading="lazy" width="1200" height="630"></picture>
+      <picture><source srcset="images/old.avif" type="image/avif"><img src="images/old.webp" alt="Смяна на гуми" loading="lazy" width="1200" height="630"></picture>
+      <picture><source srcset="images/red.avif" type="image/avif"><img src="images/red.webp" alt="Репатриране" loading="lazy" width="1200" height="630"></picture>
+      <picture><source srcset="images/mot.avif" type="image/avif"><img src="images/mot.webp" alt="Мотоциклети" loading="lazy" width="1200" height="630"></picture>
+      <picture><source srcset="images/pik.avif" type="image/avif"><img src="images/pik.webp" alt="Пикап" loading="lazy" width="1200" height="630"></picture>
     </div>
   </section>
  <!-- Features -->
@@ -385,9 +482,14 @@
   </section>
 
   <footer role="contentinfo" style="padding:1rem;color:#cfcfcf;margin-top:1rem">
-    <div style="display:flex;justify-content:space-between">
+    <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap">
       <a href="https://roadassistancesofia.bg/index.html" style="color:#fff">Начало</a>
-      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" style="color:#fff">Facebook</a>
+      <a href="https://roadassistancesofia.bg/trebich.html" style="color:#fff">Требич</a>
+      <a href="https://roadassistancesofia.bg/nadejda.html" style="color:#fff">Надежда</a>
+      <a href="https://roadassistancesofia.bg/ilienci.html" style="color:#fff">Илиенци</a>
+      <a href="https://roadassistancesofia.bg/mramor.html" style="color:#fff">Мрамор</a>
+      <a href="https://roadassistancesofia.bg/jiten.html" style="color:#fff">Житен</a>
+      <a href="https://www.facebook.com/profile.php?id=61572449813260" target="_blank" rel="noopener noreferrer" style="color:#fff">Facebook</a>
     </div>
     <p style="text-align:center;color:#bdbdbd;margin-top:0.5rem">© 2026 Пътна Помощ "Борисови Ауто" ЕООД. Всички права запазени.</p>
   </footer>
