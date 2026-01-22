@@ -29,8 +29,12 @@ for f in html_files:
     orig = text
     if 'fonts.googleapis.com' in text or 'fonts.gstatic.com' in text:
         text = google_block_re.sub(replacement, text)
-    # Fix kalkulator typo only in that file
-    if f.name.lower() == 'kalkulator.html' and 'roadasistancesofia' in text:
+    # Ensure inter-font.css link is present
+    if 'assets/inter-font.css' not in text:
+        title_end_re = re.compile(r'(</title>)', re.IGNORECASE)
+        text = title_end_re.sub(r'\1\n' + replacement, text, count=1)
+    # Fix typo in all files
+    if 'roadasistancesofia' in text:
         text = text.replace('roadasistancesofia', 'roadassistancesofia')
     if text != orig:
         f.write_text(text, encoding='utf-8')
