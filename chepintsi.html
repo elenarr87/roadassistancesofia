@@ -32,9 +32,12 @@
   <!-- Icons & fonts -->
   <link rel="icon" href="https://roadassistancesofia.bg/images/dark.webp" type="image/webp" />
   <link rel="apple-touch-icon" href="https://roadassistancesofia.bg/images/dark.webp" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  
+  
+  <link rel="stylesheet" href="assets/inter-font.css">
+
+  <!-- FontAwesome Icons (local) -->
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 
   <!-- Structured data: AutomotiveBusiness + WebPage + Breadcrumb -->
   <script type="application/ld+json">
@@ -236,32 +239,32 @@
     <h2 id="services-title" class="section-title">Нашите Услуги</h2>
     <div class="services-grid" aria-live="polite">
       <article class="service-card" data-service="road-assistance">
-        <div class="service-icon">🚨</div>
+        <div class="service-icon"><i class="fas fa-exclamation-triangle"></i></div>
         <h3>Денонощна пътна помощ</h3>
         <p>При аварии, ПТП и извънредни ситуации — 24/7 реакция в Чепинци.</p>
       </article>
       <article class="service-card" data-service="transport">
-        <div class="service-icon">🚛</div>
+        <div class="service-icon"><i class="fas fa-truck"></i></div>
         <h3>Лицензиран транспорт</h3>
         <p>Транспорт на леки автомобили, джипове и мотори с лицензиран транспорт.</p>
       </article>
       <article class="service-card" data-service="specialized-platform">
-        <div class="service-icon">🏎️</div>
+        <div class="service-icon"><i class="fas fa-car"></i></div>
         <h3>Специализирана платформа</h3>
         <p>Платформи за ниски и спортни автомобили, както и катастрофирали МПС.</p>
       </article>
       <article class="service-card" data-service="fuel-delivery">
-        <div class="service-icon">⛽</div>
+        <div class="service-icon"><i class="fas fa-gas-pump"></i></div>
         <h3>Доставка на гориво</h3>
         <p>Доставяме гориво директно до мястото на спиране на автомобила.</p>
       </article>
       <article class="service-card" data-service="tire-change">
-        <div class="service-icon">🛞</div>
+        <div class="service-icon"><i class="fas fa-wrench"></i></div>
         <h3>Смяна на гума</h3>
         <p>Смяна и монтаж на място — бързо и професионално.</p>
       </article>
       <article class="service-card" data-service="garage-extraction">
-        <div class="service-icon">🅿️</div>
+        <div class="service-icon"><i class="fas fa-parking"></i></div>
         <h3>Изваждане от гаражи</h3>
         <p>Изваждане и манипулация в тесни/подземни пространства.</p>
       </article>
@@ -282,9 +285,9 @@
       <h3 style="margin-top:1rem;color:var(--accent);">⚠️ Важна информация</h3>
       <ul style="margin-top:.75rem;color:#cfcfcf;line-height:1.6;text-align:left;max-width:880px;margin-left:auto;margin-right:auto;">
         <li>🌙 В диапазона 22:00-07:00 цените са +30%.</li>
-        <li>💳 Възможност за плащане с POS терминал или Revolut.</li>
-        <li>🔧 Такса за липса на кука: 5 EUR.</li>
-        <li>🛞 Липсваща/блокирала гума: 20 EUR за брой.</li>
+        <li><i class="fas fa-credit-card"></i> Възможност за плащане с POS терминал или Revolut.</li>
+        <li><i class="fas fa-tools"></i> Такса за липса на кука: 5 EUR.</li>
+        <li><i class="fas fa-wrench"></i> Липсваща/блокирала гума: 20 EUR за брой.</li>
         <li>⏱️ Забавяне: 15 EUR за час.</li>
         <li>🚗 Тежка катастрофа: 75 EUR.</li>
         <li>🌊 Изваждане от канавка: 75 EUR.</li>
@@ -320,12 +323,12 @@
         <p style="color:#e0e0e0">Годинен опит, модерна техника и професионален екип на ваше разположение 24/7</p>
       </div>
       <div class="features-grid">
-        <div class="feature-item"><div class="feature-icon">📄</div><strong>Фактури на Място</strong><p>Издаваме документи веднага</p></div>
-        <div class="feature-item"><div class="feature-icon">💳</div><strong>ПОС Терминал</strong><p>Плащане с всички карти</p></div>
-        <div class="feature-item"><div class="feature-icon">💰</div><strong>Revolut Плащания</strong><p>Бърз и лесен превод</p></div>
-        <div class="feature-item"><div class="feature-icon">⚡</div><strong>Светкавична Реакция</strong><p>15-30 минути в региона</p></div>
-        <div class="feature-item"><div class="feature-icon">✅</div><strong>Лицензирани</strong><p>100% законен транспорт</p></div>
-        <div class="feature-item"><div class="feature-icon">🔧</div><strong>Професионализъм</strong><p>Модерна техника и опит</p></div>
+        <div class="feature-item"><div class="feature-icon"><i class="fas fa-file-invoice"></i></div><strong>Фактури на Място</strong><p>Издаваме документи веднага</p></div>
+        <div class="feature-item"><div class="feature-icon"><i class="fas fa-credit-card"></i></div><strong>ПОС Терминал</strong><p>Плащане с всички карти</p></div>
+        <div class="feature-item"><div class="feature-icon"><i class="fas fa-money-bill-wave"></i></div><strong>Revolut Плащания</strong><p>Бърз и лесен превод</p></div>
+        <div class="feature-item"><div class="feature-icon"><i class="fas fa-bolt"></i></div><strong>Светкавична Реакция</strong><p>15-30 минути в региона</p></div>
+        <div class="feature-item"><div class="feature-icon"><i class="fas fa-check"></i></div><strong>Лицензирани</strong><p>100% законен транспорт</p></div>
+        <div class="feature-item"><div class="feature-icon"><i class="fas fa-tools"></i></div><strong>Професионализъм</strong><p>Модерна техника и опит</p></div>
       </div>
     </div>
   </section>
@@ -457,3 +460,7 @@
   </script>
 </body>
 </html>
+
+
+
+
