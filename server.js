@@ -10,6 +10,7 @@ const server = http.createServer((req, res) => {
       res.end('File not found');
       return;
     }
+    // Determine Content-Type based on file extension
     const ext = path.extname(filePath);
     let contentType = 'text/html';
     switch (ext) {
@@ -32,29 +33,33 @@ const server = http.createServer((req, res) => {
       case '.webp':
         contentType = 'image/webp';
         break;
+      case '.avif':
+        contentType = 'image/avif';
+        break;
       case '.svg':
         contentType = 'image/svg+xml';
+        break;
+      case '.woff':
+        contentType = 'font/woff';
         break;
       case '.woff2':
         contentType = 'font/woff2';
         break;
-      case '.txt':
-        contentType = 'text/plain';
+      case '.ttf':
+        contentType = 'font/ttf';
         break;
-      case '.xml':
-        contentType = 'application/xml';
+      case '.ico':
+        contentType = 'image/x-icon';
         break;
       default:
         contentType = 'text/html';
     }
-    const headers = {
-      'Content-Type': contentType,
-      'X-Content-Type-Options': 'nosniff',
-      'X-Frame-Options': 'DENY',
-      'Referrer-Policy': 'strict-origin-when-cross-origin',
-      'Content-Security-Policy-Report-Only': "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; report-uri /csp-report"
-    };
-    res.writeHead(200, headers);
+    // Security headers
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'DENY');
+    res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+    res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; report-uri /csp-report");
+    res.writeHead(200, { 'Content-Type': contentType });
     res.end(data);
   });
 });
