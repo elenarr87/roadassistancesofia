@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#FF6B00" />
-  <title>Борисови Ауто — Пътна помощ в Подгумер | Репатрак и евакуация 24/7 | 0887 999 175</title>
+  <title>Борисови Ауто — Пътна помощ в Подгумер | Репатрак и транспорт 24/7 | 0887 999 175</title>
   <meta name="description" content="Репатрак и експресна помощ в Подгумер — подаване на ток, транспорт до сервиз и аварийна помощ 24/7." />
   <meta name="keywords" content="пътна помощ подгумер, репатрак подгумер, транспорт автомобили подгумер, смяна гуми подгумер, доставка гориво подгумер, пътна помощ 24/7 подгумер, евтина пътна помощ подгумер, бърза пътна помощ подгумер, лицензирана пътна помощ подгумер, борисови ауто подгумер" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -155,12 +155,18 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 42.62,
-          "longitude": 23.38
+          "latitude": 42.74680,
+          "longitude": 23.30010
         },
         "openingHours": "Mo-Su 00:00-23:59",
         "telephone": "+359887999175",
-        "url": "https://roadassistancesofia.bg/podgumer.html"
+        "url": "https://roadassistancesofia.bg/podgumer.html",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "EUR",
+          "price": "0.80",
+          "availability": "https://schema.org/InStock"
+        }
       },
       {
         "@type": "Service",
@@ -212,7 +218,7 @@
           },
           {
             "@type": "Question",
-            "name": "Как да се свържа с вас за помощ в Подгумер?",
+            "name": "Как да се свържете с нас за помощ в Подгумер?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Обадете се на 0887 999 175 - работим 24/7. Посочете точната локация в Подгумер и вида на проблема. Ще получите бърза помощ и точна информация за цените."
@@ -243,7 +249,7 @@ img{max-width:100%;height:auto;display:block}
 .hero{position:relative;min-height:85vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0f0f1e 0%,#1a1a2e 100%);padding:2rem 1rem;overflow:hidden}
 .hero::before{content:'';position:absolute;width:140%;height:140%;background:radial-gradient(circle,rgba(255,107,0,0.06) 0%,transparent 70%);pointer-events:none}
 .hero-content{position:relative;z-index:2;max-width:1100px;padding:2rem}
-.logo{font-weight:800;font-size:clamp(1.6rem,4.5vw,2.6rem);background:var(--gradient);-webkit-background-clip:text;color:transparent;margin-bottom:.6rem}
+.logo{font-weight:800;font-size:clamp(3rem,7vw,5.5rem);background:var(--gradient);-webkit-background-clip:text;color:transparent;margin-bottom:.6rem}
 h1{font-size:clamp(1.6rem,4.5vw,2.2rem);margin-bottom:.5rem;line-height:1.1}
 .hero-subtitle{color:var(--accent);margin-bottom:1rem}
 
@@ -323,6 +329,13 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
   .floating-btn{width:54px;height:54px}
   .areas-grid{grid-template-columns:1fr} /* На малки екрани една колона */
 }
+
+/* Navigation */
+.navigation{background:rgba(26,26,46,0.95);padding:1.5rem 1rem;border-bottom:1px solid rgba(255,107,0,0.1)}
+.nav-container{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;align-items:center}
+.nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center}
+.nav-link{display:inline-block;padding:.8rem 1.2rem;border-radius:8px;background:var(--primary);color:#fff;text-decoration:none;font-weight:600;transition:transform .2s ease}
+.nav-link:hover{transform:translateY(-2px);background:var(--secondary)}
   </style>
 </head>
 <body>
@@ -341,6 +354,21 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
     </div>
   </section>
 
+  <!-- Navigation -->
+  <section class="navigation" role="navigation" aria-label="Навигация">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="#services" class="nav-link"><i class="fas fa-tools"></i> Услуги</a>
+        <a href="#pricing" class="nav-link"><i class="fas fa-euro-sign"></i> Цени</a>
+        <a href="#gallery" class="nav-link"><i class="fas fa-images"></i> Галерия</a>
+        <a href="#why-title" class="nav-link"><i class="fas fa-star"></i> Защо Нас</a>
+        <a href="#areas" class="nav-link"><i class="fas fa-map-marker-alt"></i> Области</a>
+        <a href="#faq" class="nav-link"><i class="fas fa-question-circle"></i> ЧЗВ</a>
+        <a href="#contact" class="nav-link"><i class="fas fa-phone"></i> Контакт</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Services -->
   <section id="services" aria-labelledby="services-title">
     <h2 id="services-title" class="section-title">Нашите Услуги</h2>
@@ -350,7 +378,7 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
       <article class="service-card" data-service="specialized-platform"><div class="service-icon">🏎️</div><h3>Специализирана платформа</h3><p>Платформи за ниски и спортни автомобили, както и за катастрофирали МПС.</p></article>
       <article class="service-card" data-service="fuel-delivery"><div class="service-icon">⛽</div><h3>Доставка на гориво</h3><p>Доставка на гориво и помощ на място при нужда.</p></article>
       <article class="service-card" data-service="tire-change"><div class="service-icon">🛞</div><h3>Смяна на гума</h3><p>Смяна и монтаж на място — бързо и професионално.</p></article>
-      <article class="service-card" data-service="garage-extraction"><div class="service-icon">🅿️</div><h3>Изваждане от гаражи</h3><p>Изваждане и транспортиране от тесни и подземни пространства.</p></article>
+      
     </div>
   </section>
 
@@ -430,7 +458,7 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
     <div class="features">
       <div class="features-intro" style="text-align:center">
         <h3 style="color:var(--accent)">Вашият Надежден Партньор на Пътя</h3>
-        <p style="color:#e0e0e0">Годинен опит, модерна техника и професионален екип на ваше разположение 24/7</p>
+        <p style="color:#e0e0e0">Опит, модерна техника и професионален екип на ваше разположение 24/7</p>
       </div>
       <div class="features-grid">
         <div class="feature-item"><div class="feature-icon">📄</div><strong>Фактури на Място</strong><p>Издаваме документи веднага</p></div>
@@ -471,7 +499,7 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
         </div>
       </details>
       <details class="faq-item">
-        <summary>Как да се свържа с вас за помощ в Подгумер?</summary>
+        <summary>Как да се свържете с нас за помощ в Подгумер?</summary>
         <div class="faq-answer">
           <p>Обадете се на 0887 999 175 - работим 24/7. Посочете точната локация в Подгумер и вида на проблема. Ще получите бърза помощ и точна информация за цените.</p>
         </div>
@@ -491,7 +519,7 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
     <div class="areas-grid">
       <div class="service-card"><h3>Подгумер</h3><p>Пълно обслужване в Подгумер.</p></div>
       <div class="service-card"><h3><a href="chepintsi.html" class="area-link">Чепинци</a></h3><p>Бърза реакция и транспорт.</p></div>
-      <div class="service-card"><h3><a href="negovan.html" class="area-link">Негован</a></h3><p>Лицензиран транспорт и изваждане от гаражи.</p></div>
+      <div class="service-card"><h3><a href="negovan.html" class="area-link">Негован</a></h3><p>Лицензиран транспорт.</p></div>
       <div class="service-card"><h3><a href="lokorsko.html" class="area-link">Локорско</a></h3><p>Доставка на гориво и смяна на гуми.</p></div>
     </div>
   </section>
@@ -499,7 +527,7 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
 
 
   <!-- Contact -->
-  <section aria-labelledby="contact-title">
+  <section id="contact" aria-labelledby="contact-title">
     <h2 id="contact-title" class="section-title">Свържете се с нас</h2>
     <div class="contact-section" style="background:var(--gradient);border-radius:30px;padding:3rem;text-align:center;margin:0 2rem;">
       <div class="contact-info" style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;">

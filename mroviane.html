@@ -151,12 +151,18 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 42.45,
-          "longitude": 23.35
+          "latitude": 42.81220,
+          "longitude": 23.22430
         },
         "openingHours": "Mo-Su 00:00-23:59",
         "telephone": "+359887999175",
-        "url": "https://roadassistancesofia.bg/mroviane.html"
+        "url": "https://roadassistancesofia.bg/mroviane.html",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "EUR",
+          "price": "0.80",
+          "availability": "https://schema.org/InStock"
+        }
       },
       {
         "@type": "Service",
@@ -208,7 +214,7 @@
           },
           {
             "@type": "Question",
-            "name": "Как да се свържа с вас за помощ в Мировяне?",
+            "name": "Как да се свържете с нас за помощ в Мировяне?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Обадете се на 0887 999 175 - работим 24/7. Посочете точната локация в Мировяне и вида на проблема. Ще получите бърза помощ и точна информация за цените."
@@ -248,7 +254,7 @@
     .hero::before{content:'';position:absolute;width:150%;height:150%;left:50%;top:0;transform:translateX(-50%);
       background:radial-gradient(circle,rgba(255,107,0,0.06) 0%,transparent 70%);pointer-events:none}
     .hero-content{position:relative;z-index:2;text-align:center;max-width:1200px;width:100%;padding:2rem}
-    .logo{font-weight:800;font-size:clamp(1.6rem,5vw,2.8rem);background:var(--gradient);-webkit-background-clip:text;color:transparent;margin-bottom:.6rem}
+    .logo{font-weight:800;font-size:clamp(3rem,7vw,5.5rem);background:var(--gradient);-webkit-background-clip:text;color:transparent;margin-bottom:.6rem}
     h1{font-size:clamp(1.6rem,5vw,2.6rem);line-height:1.12;margin-bottom:.6rem}
     .hero-subtitle{color:var(--accent);font-size:clamp(.95rem,2.2vw,1.05rem);margin:0 auto 1.1rem;max-width:860px}
 
@@ -302,6 +308,13 @@
     .faq-item summary:hover{background:rgba(255,107,0,0.05)}
     .faq-answer{padding:0 1rem 1rem;color:#d0d0d0}
     .faq-answer p{margin:0}
+    
+    /* Navigation */
+.navigation{background:rgba(26,26,46,0.95);padding:1.5rem 1rem;border-bottom:1px solid rgba(255,107,0,0.1)}
+.nav-container{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;align-items:center}
+.nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center}
+.nav-link{display:inline-block;padding:.8rem 1.2rem;border-radius:8px;background:var(--primary);color:#fff;text-decoration:none;font-weight:600;transition:transform .2s ease}
+.nav-link:hover{transform:translateY(-2px);background:var(--secondary)}
   </style>
 </head>
 <body>
@@ -316,10 +329,25 @@
     <div class="hero-content">
       <div class="logo">🚗 БОРИСОВИ АУТО</div>
       <h1>Пътна Помощ — Мировяне (24/7)</h1>
-      <p class="hero-subtitle">Професионална пътна помощ в Мировяне: репатрак на МПС, аварийна помощ, смяна на гума, доставка на гориво, лицензиран транспорт и изваждане от гаражи 24/7. Бърза реакция при аварии и ПТП. Обадете се: <strong>0887 999 175</strong></p>
+      <p class="hero-subtitle">Професионална пътна помощ в Мировяне: репатрак на МПС, аварийна помощ, смяна на гума, доставка на гориво, лицензиран транспорт 24/7. Бърза реакция при аварии и ПТП. Обадете се: <strong>0887 999 175</strong></p>
       <p><a href="https://www.facebook.com/profile.php?id=61572449813260" target="_blank" rel="noopener noreferrer" style="background:#1877F2;color:#fff;padding:.5rem 1rem;border-radius:8px;text-decoration:none;font-weight:700">Следвайте ни във Facebook</a></p>
     </div>
 
+  </section>
+
+  <!-- Navigation -->
+  <section class="navigation" role="navigation" aria-label="Навигация">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="#services" class="nav-link"><i class="fas fa-tools"></i> Услуги</a>
+        <a href="#pricing" class="nav-link"><i class="fas fa-euro-sign"></i> Цени</a>
+        <a href="#gallery" class="nav-link"><i class="fas fa-images"></i> Галерия</a>
+        <a href="#why-title" class="nav-link"><i class="fas fa-star"></i> Защо Нас</a>
+        <a href="#areas" class="nav-link"><i class="fas fa-map-marker-alt"></i> Области</a>
+        <a href="#faq" class="nav-link"><i class="fas fa-question-circle"></i> ЧЗВ</a>
+        <a href="#contact" class="nav-link"><i class="fas fa-phone"></i> Контакт</a>
+      </div>
+    </div>
   </section>
 
   <!-- Services -->
@@ -344,11 +372,7 @@
         <p>За ниски, спортни и катастрофирали автомобили.</p>
       </article>
 
-      <article class="service-card" aria-label="Изваждане от Гаражи" data-service="garage-extraction">
-        <div class="service-icon"><i class="fas fa-parking"></i></div>
-        <h3>Изваждане от Гаражи</h3>
-        <p>Изваждаме автомобили от подземни и частни гаражи.</p>
-      </article>
+  
 
       <article class="service-card" aria-label="Доставка на Гориво" data-service="fuel-delivery">
         <div class="service-icon"><i class="fas fa-gas-pump"></i></div>
@@ -413,7 +437,7 @@
     <div class="features">
       <div class="features-intro" style="text-align:center">
         <h3 style="color:var(--accent)">Вашият Надежден Партньор на Пътя</h3>
-        <p style="color:#e0e0e0">Годинен опит, модерна техника и професионален екип на ваше разположение 24/7</p>
+        <p style="color:#e0e0e0">Опит, модерна техника и професионален екип на ваше разположение 24/7</p>
       </div>
       <div class="features-grid">
         <div class="feature-item"><div class="feature-icon"><i class="fas fa-file-invoice"></i></div><strong>Фактури на Място</strong><p>Издаваме документи веднага</p></div>
@@ -454,7 +478,7 @@
         </div>
       </details>
       <details class="faq-item">
-        <summary>Как да се свържа с вас за помощ в Мировяне?</summary>
+        <summary>Как да се свържете с нас за помощ в Мировяне?</summary>
         <div class="faq-answer">
           <p>Обадете се на 0887 999 175 - работим 24/7. Посочете точната локация в Мировяне и вида на проблема. Ще получите бърза помощ и точна информация за цените.</p>
         </div>
@@ -474,7 +498,7 @@
     <div class="areas-grid">
       <div class="area-card"><h3>Мировяне</h3><p>Пълно обслужване в Мировяне.</p><a class="area-link" href="mroviane.html#services">Повече</a></div>
       <div class="area-card"><h3><a href="noviiskar.html" class="area-link">Нови Искър</a></h3><p>Бърза реакция и транспорт.</p><a class="area-link" href="noviiskar.html#services">Повече</a></div>
-      <div class="area-card"><h3><a href="podgumer.html" class="area-link">Подгумер</a></h3><p>Изваждане от гаражи и транспорт.</p><a class="area-link" href="podgumer.html#services">Повече</a></div>
+      <div class="area-card"><h3><a href="podgumer.html" class="area-link">Подгумер</a></h3><p>Транспорт.</p><a class="area-link" href="podgumer.html#services">Повече</a></div>
       <div class="area-card"><h3><a href="lokorsko.html" class="area-link">Локорско</a></h3><p>Бърза реакция и доставка на услуги.</p><a class="area-link" href="lokorsko.html#services">Повече</a></div>
     </div>
   </section>
@@ -482,7 +506,7 @@
 
   <!-- Contact -->
   <section aria-labelledby="contact-title">
-    <h2 id="contact-title" class="section-title">Свържете се с Нас</h2>
+    <h2 id="contact-title" class="section-title">Свържете се с нас</h2>
     <div class="contact-section" style="background:var(--gradient);border-radius:30px;padding:3rem;text-align:center;margin:0 2rem;">
       <div class="contact-info" style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;">
         <div class="contact-item">📞 <strong>Телефон</strong><a href="tel:0887999175" style="color:white;font-size:1.2rem;margin-left:.4rem">0887 999 175</a></div>

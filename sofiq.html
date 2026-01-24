@@ -159,7 +159,13 @@
         },
         "openingHours": "Mo-Su 00:00-23:59",
         "telephone": "+359887999175",
-        "url": "https://roadassistancesofia.bg/sofiq.html"
+        "url": "https://roadassistancesofia.bg/sofiq.html",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "EUR",
+          "price": "0.80",
+          "availability": "https://schema.org/InStock"
+        }
       },
       {
         "@type": "Service",
@@ -211,7 +217,7 @@
           },
           {
             "@type": "Question",
-            "name": "Как да се свържа с вас за помощ в София?",
+            "name": "Как да се свържете с нас за помощ в София?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Обадете се на 0887 999 175 - работим 24/7. Посочете точната локация в София и вида на проблема. Ще получите бърза помощ и точна информация за цените."
@@ -251,7 +257,7 @@
     .hero::before{content:"";position:absolute;width:140%;height:140%;left:50%;top:0;transform:translateX(-50%);
                    background:radial-gradient(circle,rgba(255,107,0,0.06) 0%,transparent 70%);pointer-events:none}
     .hero-content{position:relative;z-index:2;text-align:center;max-width:1100px;padding:2rem}
-    .logo{font-weight:800;font-size:clamp(1.6rem,4.5vw,2.6rem);background:var(--gradient);-webkit-background-clip:text;color:transparent;margin-bottom:.6rem}
+    .logo{font-weight:800;font-size:clamp(3rem,7vw,5.5rem);background:var(--gradient);-webkit-background-clip:text;color:transparent;margin-bottom:.6rem}
     h1{font-size:clamp(1.6rem,4.5vw,2.4rem);margin-bottom:.5rem;line-height:1.1}
     .hero-subtitle{color:var(--accent);margin-bottom:1rem}
 
@@ -295,6 +301,12 @@
       .floating-btn{width:54px;height:54px}
       .areas-grid{grid-template-columns:1fr}
     }
+    /* Navigation */
+    .navigation{background:rgba(26,26,46,0.95);padding:1.5rem 1rem;border-bottom:1px solid rgba(255,107,0,0.1)}
+    .nav-container{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;align-items:center}
+    .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center}
+    .nav-link{display:inline-block;padding:.8rem 1.2rem;border-radius:8px;background:var(--primary);color:#fff;text-decoration:none;font-weight:600;transition:transform .2s ease}
+    .nav-link:hover{transform:translateY(-2px);background:var(--secondary)}
   </style>
 </head>
 <body>
@@ -313,6 +325,21 @@
       <p><a href="https://www.facebook.com/profile.php?id=61572449813260" target="_blank" rel="noopener noreferrer" style="background:#1877F2;color:#fff;padding:.5rem 1rem;border-radius:8px;text-decoration:none;font-weight:700">Следвайте ни във Facebook</a></p>
     </div>
 
+  </section>
+
+  <!-- Navigation -->
+  <section class="navigation" role="navigation" aria-label="Навигация">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="#services" class="nav-link"><i class="fas fa-tools"></i> Услуги</a>
+        <a href="#pricing" class="nav-link"><i class="fas fa-euro-sign"></i> Цени</a>
+        <a href="#gallery" class="nav-link"><i class="fas fa-images"></i> Галерия</a>
+        <a href="#why-title" class="nav-link"><i class="fas fa-star"></i> Защо Нас</a>
+        <a href="#areas" class="nav-link"><i class="fas fa-map-marker-alt"></i> Области</a>
+        <a href="#faq" class="nav-link"><i class="fas fa-question-circle"></i> ЧЗВ</a>
+        <a href="#contact" class="nav-link"><i class="fas fa-phone"></i> Контакт</a>
+      </div>
+    </div>
   </section>
 
   <!-- Services -->
@@ -470,7 +497,7 @@
         </div>
       </details>
       <details class="faq-item">
-        <summary>Как да се свържа с вас за помощ в София?</summary>
+        <summary>Как да се свържете с нас за помощ в София?</summary>
         <div class="faq-answer">
           <p>Обадете се на 0887 999 175 - работим 24/7. Посочете точната локация в София и вида на проблема. Ще получите бърза помощ и точна информация за цените.</p>
         </div>
@@ -488,9 +515,9 @@
   <section id="areas" aria-labelledby="areas-title">
     <h2 id="areas-title" class="section-title">Област на обслужване — София</h2>
     <div class="areas-grid">
-      <div class="service-card"><h3>Требич</h3><p>Пълно обслужване в Требич.</p></div>
+      <div class="service-card"><h3>София</h3><p>Пълно обслужване в София.</p></div>
       <div class="service-card"><h3><a href="ilienci.html" class="area-link">Илиенци</a></h3><p>Бърза реакция и транспорт.</p></div>
-      <div class="service-card"><h3><a href="mramor.html" class="area-link">Мрамор</a></h3><p>Лицензиран транспорт и изваждане от гаражи.</p></div>
+      <div class="service-card"><h3><a href="mramor.html" class="area-link">Мрамор</a></h3><p>Лицензиран транспорт.</p></div>
       <div class="service-card"><h3><a href="jiten.html" class="area-link">Житен</a></h3><p>Доставка на гориво и смяна на гуми.</p></div>
     </div>
   </section>
@@ -499,7 +526,7 @@
 
   <!-- Contact -->
   <section aria-labelledby="contact-title">
-    <h2 id="contact-title" class="section-title">Свържете се с Нас</h2>
+    <h2 id="contact-title" class="section-title">Свържете се с нас</h2>
     <div class="contact-section">
       <div class="contact-info" style="display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
         <div style="text-align:center">📞 <strong>0887 999 175</strong></div>

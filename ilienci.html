@@ -149,8 +149,8 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 42.15,
-          "longitude": 23.02
+          "latitude": 42.69649,
+          "longitude": 23.32601
         },
         "openingHours": "Mo-Su 00:00-23:59",
         "telephone": "+359887999175",
@@ -206,7 +206,7 @@
           },
           {
             "@type": "Question",
-            "name": "Как да се свържа с вас за помощ в Илиенци?",
+            "name": "Как да се свържете с нас за помощ в Илиенци?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Обадете се на 0887 999 175 - работим 24/7. Посочете точната локация в Илиенци и вида на проблема. Ще получите бърза помощ и точна информация за цените."
@@ -244,7 +244,7 @@
     .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0f0f1e 0%,#1a1a2e 100%);padding:2rem 1rem;overflow:hidden}
     .hero::before{content:'';position:absolute;width:150%;height:150%;left:50%;top:0;transform:translateX(-50%);background:radial-gradient(circle,rgba(255,107,0,0.06) 0%,transparent 70%);pointer-events:none}
     .hero-content{position:relative;z-index:2;text-align:center;max-width:1200px;width:100%;padding:2rem}
-    .logo{font-weight:800;font-size:clamp(1.6rem,5vw,2.8rem);background:var(--gradient);-webkit-background-clip:text;color:transparent;margin-bottom:.6rem}
+    .logo{font-weight:800;font-size:clamp(3rem,7vw,5.5rem);background:var(--gradient);-webkit-background-clip:text;color:transparent;margin-bottom:.6rem}
     h1{font-size:clamp(1.6rem,5vw,2.6rem);line-height:1.12;margin-bottom:.6rem}
     .hero-subtitle{color:var(--accent);font-size:clamp(.95rem,2.2vw,1.05rem);margin:0 auto 1.1rem;max-width:860px}
 
@@ -295,6 +295,13 @@
       h1{font-size:1.4rem}
       .logo{font-size:1.3rem}
     }
+
+/* Navigation */
+.navigation{background:rgba(26,26,46,0.95);padding:1.5rem 1rem;border-bottom:1px solid rgba(255,107,0,0.1)}
+.nav-container{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;align-items:center}
+.nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center}
+.nav-link{display:inline-block;padding:.8rem 1.2rem;border-radius:8px;background:var(--primary);color:#fff;text-decoration:none;font-weight:600;transition:transform .2s ease}
+.nav-link:hover{transform:translateY(-2px);background:var(--secondary)}
   </style>
 </head>
 
@@ -314,6 +321,21 @@
       <p class="hero-subtitle">Професионална пътна помощ в Илиенци: репатрак на МПС, аварийна помощ, смяна на гума, доставка на гориво, лицензиран транспорт 24/7. Бърза реакция при аварии и ПТП. Обадете се: <strong>0887 999 175</strong></p>
     </div>
   </section>
+
+<!-- Navigation -->
+<section class="navigation" role="navigation" aria-label="Навигация">
+  <div class="nav-container">
+    <div class="nav-links">
+      <a href="#services" class="nav-link"><i class="fas fa-tools"></i> Услуги</a>
+      <a href="#pricing" class="nav-link"><i class="fas fa-euro-sign"></i> Цени</a>
+      <a href="#gallery" class="nav-link"><i class="fas fa-images"></i> Галерия</a>
+      <a href="#why-title" class="nav-link"><i class="fas fa-star"></i> Защо Нас</a>
+      <a href="#areas" class="nav-link"><i class="fas fa-map-marker-alt"></i> Области</a>
+      <a href="#faq" class="nav-link"><i class="fas fa-question-circle"></i> ЧЗВ</a>
+      <a href="#contact" class="nav-link"><i class="fas fa-phone"></i> Контакт</a>
+    </div>
+  </div>
+</section>
 
   <!-- Services -->
   <section id="services" aria-labelledby="services-title">
@@ -401,7 +423,7 @@
     <div class="features">
       <div class="features-intro" style="text-align:center">
         <h3 style="color:var(--accent)">Вашият надежден партньор на пътя</h3>
-        <p style="color:#e0e0e0">Годинен опит, модерна техника и професионален екип на ваше разположение 24/7</p>
+        <p style="color:#e0e0e0">Опит, модерна техника и професионален екип на ваше разположение 24/7</p>
       </div>
       <div class="features-grid">
         <div class="feature-item"><div class="feature-icon"><i class="fas fa-file-invoice"></i></div><strong>Фактур�� на място</strong><p>Издаваме документи веднага</p></div>
@@ -421,7 +443,7 @@
       <details class="faq-item"><summary>Какви услуги предлагате в Илиенци?</summary><div class="faq-answer"><p>В Илиенци предлагаме: денонощна пътна помощ при аварии, лицензиран транспорт и репатрак на МПС, специализирани платформи за ниски автомобили, доставка на гориво, смяна на гуми .</p></div></details>
       <details class="faq-item"><summary>Колко време отнема пристигането в Илиенци?</summary><div class="faq-answer"><p>Обикновено пристигаме в Илиенци между 15 и 30 минути след обаждането, в зависимост от трафика, времето и точната локация. Работим 24/7 за бърза реакция.</p></div></details>
       <details class="faq-item"><summary>Какви са цените на услугите в Илиенци?</summary><div class="faq-answer"><p>Цените започват от 40 EUR за МПС до 1500 кг (0.80 EUR/км). За по-тежки автомобили цените са по-високи. Нощна такса +30%, допълнителни услуги като смяна на гума - 20 EUR. Плащане с POS или Revolut.</p></div></details>
-      <details class="faq-item"><summary>Как да се свържа с вас за помощ в Илиенци?</summary><div class="faq-answer"><p>Обадете се на 0887 999 175 - работим 24/7. Посочете точната локация в Илиенци и вида на проблема. Ще получите бърза помощ и точна информация за цените.</p></div></details>
+      <details class="faq-item"><summary>Как да се свържете с нас за помощ в Илиенци?</summary><div class="faq-answer"><p>Обадете се на 0887 999 175 - работим 24/7. Посочете точната локация в Илиенци и вида на проблема. Ще получите бърза помощ и точна информация за цените.</p></div></details>
       <details class="faq-item"><summary>Какво да направя при авария в Илиенци?</summary><div class="faq-answer"><p>При авария в Илиенци: осигурете безопасността си и на другите, включете аварийни светлини, поставете триъгълник за опасност. Обадете се на 0887 999 175 за професионална помощ. Не се опитвайте да ремонтирате сами тежки повреди.</p></div></details>
     </div>
   </section>
@@ -441,7 +463,7 @@
 
   <!-- Contact -->
   <section aria-labelledby="contact-title">
-    <h2 id="contact-title" class="section-title">Свържете се с Нас</h2>
+    <h2 id="contact-title" class="section-title">Свържете се с нас</h2>
     <div class="contact-section" style="background:var(--gradient);border-radius:30px;padding:3rem;text-align:center;margin:0 2rem;">
       <div class="contact-info" style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;">
         <div class="contact-item">📞 <strong>Телефон</strong><a href="tel:0887999175" style="color:white;font-size:1.2rem;margin-left:.4rem">0887 999 175</a></div>

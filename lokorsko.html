@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#FF6B00" />
-  <title>Борисови Ауто — Пътна помощ в Локорско | Репатрак и евакуация 24/7 | 0887 999 175</title>
-  <meta name="description" content="Репатрак и експресна помощ в Локорско — пускане на ток, транспорт до сервиз и аварийна помощ 24/7." />
+  <title>Борисови Ауто — Пътна помощ в Локорско | Репатрак 24/7 | 0887 999 175</title>
+  <meta name="description" content="Репатрак и експресна помощ в Локорско — подаване на ток, транспорт до сервиз и аварийна помощ 24/7." />
   <meta name="keywords" content="пътна помощ локорско, репатрак локорско, транспорт автомобили локорско, смяна гуми локорско, доставка гориво локорско, пътна помощ 24/7 локорско, евтина пътна помощ локорско, бърза пътна помощ локорско, лицензирана пътна помощ локорско, борисови ауто локорско" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="author" content="Пътна Помощ Борисови Ауто ЕООД" />
@@ -15,7 +15,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://roadassistancesofia.bg/lokorsko.html" />
   <meta property="og:title" content="Борисови Ауто — Пътна помощ Локорско | Репатрак 24/7" />
-  <meta property="og:description" content="Репатрак и експресна помощ в Локорско — пускане на ток и транспорт до сервиз." />
+  <meta property="og:description" content="Репатрак и експресна помощ в Локорско — подаване на ток и транспорт до сервиз." />
   <meta property="og:image" content="https://roadassistancesofia.bg/images/dark.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -25,7 +25,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Борисови Ауто — Пътна помощ Локорско | 24/7" />
-  <meta name="twitter:description" content="Репатрак и експресна помощ в Локорско — пускане на ток и транспорт до сервиз." />
+  <meta name="twitter:description" content="Репатрак и експресна помощ в Локорско — подаване на ток и транспорт до сервиз." />
   <meta name="twitter:image" content="https://roadassistancesofia.bg/images/dark.webp" />
 
   <!-- Geo -->
@@ -155,12 +155,18 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 42.65,
-          "longitude": 23.35
+          "latitude": 42.78910,
+          "longitude": 23.36090
         },
         "openingHours": "Mo-Su 00:00-23:59",
         "telephone": "+359887999175",
-        "url": "https://roadassistancesofia.bg/lokorsko.html"
+        "url": "https://roadassistancesofia.bg/lokorsko.html",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "EUR",
+          "price": "0.80",
+          "availability": "https://schema.org/InStock"
+        }
       },
       {
         "@type": "Service",
@@ -212,7 +218,7 @@
           },
           {
             "@type": "Question",
-            "name": "Как да се свържа с вас за помощ в Локорско?",
+            "name": "Как да се свържете с нас за помощ в Локорско?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Обадете се на 0887 999 175 - работим 24/7. Посочете точната локация в Локорско и вида на проблема. Ще получите бърза помощ и точна информация за цените."
@@ -243,7 +249,7 @@ img{max-width:100%;height:auto;display:block}
 .hero{position:relative;min-height:85vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0f0f1e 0%,#1a1a2e 100%);padding:2rem 1rem;overflow:hidden}
 .hero::before{content:'';position:absolute;width:140%;height:140%;background:radial-gradient(circle,rgba(255,107,0,0.06) 0%,transparent 70%);pointer-events:none}
 .hero-content{position:relative;z-index:2;max-width:1100px;padding:2rem}
-.logo{font-weight:800;font-size:clamp(1.6rem,4.5vw,2.6rem);background:var(--gradient);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:.6rem}
+.logo{font-weight:800;font-size:clamp(3rem,7vw,5.5rem);background:var(--gradient);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:.6rem}
 h1{font-size:clamp(1.6rem,4.5vw,2.2rem);margin-bottom:.5rem;line-height:1.1}
 .hero-subtitle{color:var(--accent);margin-bottom:1rem}
 
@@ -323,6 +329,13 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
   .floating-btn{width:54px;height:54px}
   .areas-grid{grid-template-columns:1fr} /* На малки екрани една колона */
 }
+
+/* Navigation */
+.navigation{background:rgba(26,26,46,0.95);padding:1.5rem 1rem;border-bottom:1px solid rgba(255,107,0,0.1)}
+.nav-container{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;align-items:center}
+.nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center}
+.nav-link{display:inline-block;padding:.8rem 1.2rem;border-radius:8px;background:var(--primary);color:#fff;text-decoration:none;font-weight:600;transition:transform .2s ease}
+.nav-link:hover{transform:translateY(-2px);background:var(--secondary)}
   </style>
 </head>
 <body>
@@ -336,8 +349,23 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
     <div class="hero-content">
       <div class="logo">🚗 БОРИСОВИ АУТО</div>
       <h1>Пътна Помощ — Локорско (24/7)</h1>
-      <p class="hero-subtitle">Репатрак и експресна помощ в Локорско — пускане на ток, транспорт до сервиз и аварийна помощ. Обадете се: <strong>0887 999 175</strong></p>
+      <p class="hero-subtitle">Репатрак и експресна помощ в Локорско — подаване на ток, транспорт до сервиз и аварийна помощ. Обадете се: <strong>0887 999 175</strong></p>
       <p><a href="https://www.facebook.com/profile.php?id=61572449813260" target="_blank" rel="noopener noreferrer" style="background:#1877F2;color:#fff;padding:.5rem 1rem;border-radius:8px;text-decoration:none;font-weight:700">Следвайте ни във Facebook</a></p>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+  <section class="navigation" role="navigation" aria-label="Навигация">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="#services" class="nav-link"><i class="fas fa-tools"></i> Услуги</a>
+        <a href="#pricing" class="nav-link"><i class="fas fa-euro-sign"></i> Цени</a>
+        <a href="#gallery" class="nav-link"><i class="fas fa-images"></i> Галерия</a>
+        <a href="#why-title" class="nav-link"><i class="fas fa-star"></i> Защо Нас</a>
+        <a href="#areas" class="nav-link"><i class="fas fa-map-marker-alt"></i> Области</a>
+        <a href="#faq" class="nav-link"><i class="fas fa-question-circle"></i> ЧЗВ</a>
+        <a href="#contact" class="nav-link"><i class="fas fa-phone"></i> Контакт</a>
+      </div>
     </div>
   </section>
 
@@ -430,7 +458,7 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
     <div class="features">
       <div class="features-intro" style="text-align:center">
         <h3 style="color:var(--accent)">Вашият Надежден Партньор на Пътя</h3>
-        <p style="color:#e0e0e0">Годинен опит, модерна техника и професионален екип на ваше разположение 24/7</p>
+        <p style="color:#e0e0e0">Опит, модерна техника и професионален екип на ваше разположение 24/7</p>
       </div>
       <div class="features-grid">
         <div class="feature-item"><div class="feature-icon">📄</div><strong>Фактури на Място</strong><p>Издаваме документи веднага</p></div>
@@ -455,7 +483,7 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
       <details class="faq-item">
         <summary>Какви услуги предлагате в Локорско?</summary>
         <div class="faq-answer">
-          <p>В Локорско предлагаме: денонощна пътна помощ при аварии, лицензиран транспорт и репатрак на МПС, специализирани платформи за ниски автомобили, доставка на гориво, смяна на гуми и изваждане от гаражи.</p>
+          <p>В Локорско предлагаме: денонощна пътна помощ при аварии, лицензиран транспорт и репатрак на МПС, специализирани платформи за ниски автомобили, доставка на гориво, смяна на гуми.</p>
         </div>
       </details>
       <details class="faq-item">
@@ -471,7 +499,7 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
         </div>
       </details>
       <details class="faq-item">
-        <summary>Как да се свържа с вас за помощ в Локорско?</summary>
+        <summary>Как да се свържете с нас за помощ в Локорско?</summary>
         <div class="faq-answer">
           <p>Обадете се на 0887 999 175 - работим 24/7. Посочете точната локация в Локорско и вида на проблема. Ще получите бърза помощ и точна информация за цените.</p>
         </div>
@@ -491,7 +519,7 @@ footer{padding:1rem;text-align:center;color:#cfcfcf;margin-top:1rem}
     <div class="areas-grid">
       <div class="service-card"><h3>Локорско</h3><p>Пълно обслужване в Локорско.</p></div>
       <div class="service-card"><h3><a href="podgumer.html" class="area-link">Подгумер</a></h3><p>Бърза реакция и транспорт.</p></div>
-      <div class="service-card"><h3><a href="chepintsi.html" class="area-link">Чепинци</a></h3><p>Лицензиран транспорт и изваждане от гаражи.</p></div>
+      <div class="service-card"><h3><a href="chepintsi.html" class="area-link">Чепинци</a></h3><p>Лицензиран транспорт.</p></div>
       <div class="service-card"><h3><a href="negovan.html" class="area-link">Негован</a></h3><p>Доставка на гориво и смяна на гуми.</p></div>
     </div>
   </section>

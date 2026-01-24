@@ -6,8 +6,18 @@
   <title>Калкулатор — Пътна помощ (без ДДС)</title>
 <link rel="stylesheet" href="assets/inter-font.css">
 
-  <meta name="description" content="Калкулатор за цена на репатрак — всички цени са за двете посоки и без ДДС. Възможно плащане: POS, Revolut." />
+  <meta name="description" content="Калкулатор за цена на репатрак — всички цени са за двете посоки и без ДДС. Възможно плащане: POS, Revolut.">
   <link rel="canonical" href="https://roadassistancesofia.bg/kalkulator.html">
+
+  <!-- Favicon -->
+  <link rel="icon" href="red.webp" type="image/x-icon">
+
+  <!-- Open Graph for sharing -->
+  <meta property="og:title" content="Калкулатор — Пътна помощ (без ДДС)">
+  <meta property="og:description" content="Калкулатор за цена на репатрак — всички цени са за двете посоки и без ДДС. Възможно плащане: POS, Revolut.">
+  <meta property="og:image" content="https://roadassistancesofia.bg/images/dark.avif">
+  <meta property="og:url" content="https://roadassistancesofia.bg/kalkulator.html">
+  <meta property="og:type" content="website">
 
   <!-- FontAwesome Icons (local) -->
   <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
@@ -66,6 +76,41 @@
     @media (max-width:768px){.hero{padding:2rem 1rem}.floating-buttons{bottom:14px}}
     @media (max-width:480px){.hero h1{font-size:1.4rem}.logo{font-size:1.3rem}}
     .skip-link:focus{position:static;left:0;width:auto;height:auto;display:inline-block;padding:.5rem;background:#fff;color:var(--primary);border-radius:6px}
+    .social-btn { color: white; }
+    /* Options list (visual cards) */
+    .options-list{display:flex;flex-direction:column;gap:14px}
+    .option-card{
+      display:grid;
+      grid-template-columns:48px 1fr 180px;
+      align-items:center;
+      gap:16px;
+      padding:18px;
+      background:linear-gradient(180deg, rgba(255,245,240,0.9), rgba(255,250,248,1));
+      border-radius:14px;
+      border:1px solid rgba(255,107,0,0.04);
+      box-shadow: 0 8px 18px rgba(11,11,27,0.03);
+    }
+    .option-card .checkbox-wrap{display:flex;align-items:center;justify-content:center}
+    .option-card input[type="checkbox"]{width:22px;height:22px;accent-color:var(--primary)}
+    .option-card .label-wrap{font-weight:700;color:var(--secondary);line-height:1.25}
+    .option-card .label-wrap small{font-weight:600;color:var(--muted);display:block;margin-top:6px;font-size:0.95rem}
+
+    /* Controls (minus / count / plus) */
+    .controls{display:flex;align-items:center;gap:10px;justify-self:end}
+    .control-btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:44px;height:44px;border-radius:10px;border:2px solid #ff8c00;background:#fff;color:var(--accent-dark);
+      font-size:1.25rem;font-weight:700;cursor:pointer;
+      box-shadow: 0 4px 10px rgba(255,140,0,0.06);
+    }
+    .control-btn:active{transform:translateY(1px)}
+    .count-display{
+      width:64px;height:44px;border-radius:10px;border:1px solid #e6eef6;display:flex;align-items:center;justify-content:center;background:#fff;font-weight:700;
+      font-size:1rem;color:var(--secondary);
+    }
+
+    /* Accessibility */
+    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;border:0;padding:0;margin:-1px}
   </style>
     <script type="application/ld+json">
     {
@@ -129,7 +174,7 @@
   </div>
 
   <!-- HERO section -->
-  <section class="hero" role="region" aria-label="Херо">
+  <section class="hero">
     <div class="hero-content">
       <div class="logo">🚗 БОРИСОВИ АУТО</div>
       <h1>Калкулатор за цена — Пътна помощ</h1>
@@ -157,18 +202,22 @@
   </script>
 
   <main id="main" class="container" role="main">
-    <div class="form-group">
-      <label for="serviceType">Тип услуга</label>
-      <select id="serviceType">
-        <option value="towing" selected>Пътна помощ / Репатриране</option>
-        <option value="fuel">Доставка на гориво</option>
-        <option value="tire">Смяна на гума</option>
-      </select>
-    </div>
+<div class="form-row">
+        <div>
+          <label for="serviceType">Тип услуга</label>
+          <select id="serviceType">
+            <option value="towing" selected>Пътна помощ / Репатриране</option>
+            <option value="fuel">Доставка на гориво</option>
+            <option value="tire">Смяна на гума</option>
+          </select>
+        </div>
+      </div>
 
-    <div class="form-group">
-      <label for="distance">Разстояние в ЕДНАТА посока (км)</label>
-      <input id="distance" type="number" min="0.1" step="0.1" placeholder="Напр. 45">
+      <div class="form-row">
+        <div>
+          <label for="distance">Разстояние в ЕДНАТА посока (км)</label>
+          <input id="distance" type="number" min="0.1" step="0.1" placeholder="Напр. 45">
+        </div>
     </div>
 
     <div class="form-group">
@@ -181,54 +230,87 @@
       </select>
     </div>
 
-    <h3 style="color:var(--primary)">Допълнителни условия</h3>
+      <h2 style="color:var(--primary)">Допълнителни условия</h2>
 
+      <div class="options-list" role="list">
+        <!-- Option: no hook -->
+        <div class="option-card" role="listitem" aria-labelledby="label-noHook">
+          <div class="checkbox-wrap">
+            <input id="noHook" type="checkbox" aria-labelledby="label-noHook">
+          </div>
+          <div class="label-wrap" id="label-noHook">
+            Липса на кука <small>(+5 € / 9.78 лв)</small>
+          </div>
+          <div class="controls" aria-hidden="true">
+            <!-- no additional controls -->
+          </div>
+        </div>
 
-    <div class="checkbox-group">
-      <div class="checkbox-row">
-        <input type="checkbox" id="noHook">
-        <div class="number-input" style="visibility:hidden;"></div>
-        <label for="noHook">Липса на кука (+5 € / 9.78 лв)</label>
-      </div>
-    </div>
+        <!-- Blocked / missing tire (with controls) -->
+        <div class="option-card" role="listitem" aria-labelledby="label-blockedTire">
+          <div class="checkbox-wrap">
+            <input id="blockedTire" type="checkbox" aria-labelledby="label-blockedTire">
+          </div>
+          <div class="label-wrap" id="label-blockedTire">
+            Блокирала/липсваща гума <small>(+20 € / 39.12 лв на брой)</small>
+          </div>
+          <div class="controls">
+            <button type="button" class="control-btn" aria-label="Намали броя на гумите" onclick="changeTire(-1)">−</button>
+            <div id="tireCountDisplay" class="count-display" aria-live="polite" aria-atomic="true">0</div>
+            <button type="button" class="control-btn" aria-label="Увеличи броя на гумите" onclick="changeTire(1)">+</button>
+            <input id="tireCount" type="number" value="0" min="0" max="4" readonly class="visually-hidden" aria-hidden="true">
+          </div>
+        </div>
 
-    <div class="checkbox-group">
-      <div class="checkbox-row">
-        <input type="checkbox" id="blockedTire">
-        <div class="number-input"><button type="button" aria-label="Намали броя на гумите" onclick="changeTire(-1)">−</button><input id="tireCount" type="number" value="0" min="0" max="4" readonly aria-live="polite"><button type="button" aria-label="Увеличи броя на гумите" onclick="changeTire(1)">+</button></div>
-        <label for="blockedTire">Блокирала/липсваща гума (+20 € / 39.12 лв на брой)</label>
-      </div>
-    </div>
+        <!-- Delay with controls -->
+        <div class="option-card" role="listitem" aria-labelledby="label-delay">
+          <div class="checkbox-wrap">
+            <input id="delay" type="checkbox" aria-labelledby="label-delay">
+          </div>
+          <div class="label-wrap" id="label-delay">
+            Забавяне на място <small>(+15 € / 29.34 лв на час)</small>
+          </div>
+          <div class="controls">
+            <button type="button" class="control-btn" aria-label="Намали часа на забавяне" onclick="changeDelay(-1)">−</button>
+            <div id="delayHoursDisplay" class="count-display" aria-live="polite" aria-atomic="true">0</div>
+            <button type="button" class="control-btn" aria-label="Увеличи часа на забавяне" onclick="changeDelay(1)">+</button>
+            <input id="delayHours" type="number" value="0" min="0" readonly class="visually-hidden" aria-hidden="true">
+          </div>
+        </div>
 
-    <div class="checkbox-group">
-      <div class="checkbox-row">
-        <input type="checkbox" id="delay">
-        <div class="number-input"><button type="button" aria-label="Намали часа на забавяне" onclick="changeDelay(-1)">−</button><input id="delayHours" type="number" value="0" min="0" readonly aria-live="polite"><button type="button" aria-label="Увеличи часа на забавяне" onclick="changeDelay(1)">+</button></div>
-        <label for="delay">Забавяне на място (+15 € / 29.34 лв на час)</label>
-      </div>
-    </div>
+        <!-- Heavy accident -->
+        <div class="option-card" role="listitem" aria-labelledby="label-heavyAccident">
+          <div class="checkbox-wrap">
+            <input id="heavyAccident" type="checkbox" aria-labelledby="label-heavyAccident">
+          </div>
+          <div class="label-wrap" id="label-heavyAccident">
+            Тежка катастрофа <small>(+75 € / 146.69 лв)</small>
+          </div>
+          <div class="controls" aria-hidden="true"></div>
+        </div>
 
-    <div class="checkbox-group">
-      <div class="checkbox-row">
-        <input type="checkbox" id="heavyAccident">
-        <div class="number-input" style="visibility:hidden;"></div>
-        <label for="heavyAccident">Тежка катастрофа (+75 € / 146.69 лв)</label>
+        <!-- Ditch -->
+        <div class="option-card" role="listitem" aria-labelledby="label-ditch">
+          <div class="checkbox-wrap">
+            <input id="ditch" type="checkbox" aria-labelledby="label-ditch">
+          </div>
+          <div class="label-wrap" id="label-ditch">
+            Изваждане от канавка <small>(+75 € / 146.69 лв)</small>
+          </div>
+          <div class="controls" aria-hidden="true"></div>
+        </div>
+
+        <!-- Night -->
+        <div class="option-card" role="listitem" aria-labelledby="label-night">
+          <div class="checkbox-wrap">
+            <input id="night" type="checkbox" aria-labelledby="label-night">
+          </div>
+          <div class="label-wrap" id="label-night">
+            Нощна услуга 22:00–07:00 <small>(+30%)</small>
+          </div>
+          <div class="controls" aria-hidden="true"></div>
+        </div>
       </div>
-    </div>
-    <div class="checkbox-group">
-      <div class="checkbox-row">
-        <input type="checkbox" id="ditch">
-        <div class="number-input" style="visibility:hidden;"></div>
-        <label for="ditch">Изваждане от канавка (+75 € / 146.69 лв)</label>
-      </div>
-    </div>
-    <div class="checkbox-group">
-      <div class="checkbox-row">
-        <input type="checkbox" id="night">
-        <div class="number-input" style="visibility:hidden;"></div>
-        <label for="night">Нощна услуга 22:00–07:00 (+30%)  </label>
-      </div>
-    </div>
 
     <button class="calc-btn" id="calc-btn" onclick="calculate()">ИЗЧИСЛИ ТОЧНАТА ЦЕНА</button>
 
@@ -252,7 +334,7 @@
   
 
   <script>
-    // Всички цени са за двете посоки и без ДДС
+    // Constants and rates
     const RATE = 1.95583; // EUR -> BGN
     const RATES = {
       small: { perKm: 0.80, min: 40 },
@@ -260,11 +342,47 @@
       large: { perKm: 0.97, min: 50 }
     };
 
-    function changeTire(delta){ const inp = document.getElementById('tireCount'); let v = parseInt(inp.value)||0; v = Math.min(4, Math.max(0, v+delta)); inp.value = v; document.getElementById('blockedTire').checked = v>0; }
-    function changeDelay(delta){ const inp = document.getElementById('delayHours'); let v = parseInt(inp.value)||0; v = Math.max(0, v+delta); inp.value = v; document.getElementById('delay').checked = v>0; }
+    // helper UI sync (count displays)
+    function setTireCount(v){
+      v = Math.min(4, Math.max(0, v));
+      document.getElementById('tireCount').value = v;
+      document.getElementById('tireCountDisplay').innerText = v;
+      document.getElementById('blockedTire').checked = v > 0;
+    }
+    function setDelayHours(v){
+      v = Math.max(0, v);
+      document.getElementById('delayHours').value = v;
+      document.getElementById('delayHoursDisplay').innerText = v;
+      document.getElementById('delay').checked = v > 0;
+    }
 
+    function changeTire(delta){
+      const cur = parseInt(document.getElementById('tireCount').value) || 0;
+      setTireCount(cur + delta);
+    }
+    function changeDelay(delta){
+      const cur = parseInt(document.getElementById('delayHours').value) || 0;
+      setDelayHours(cur + delta);
+    }
 
+    // Location helper (same as before)
+    window.sendLocation = function(){
+      if(!navigator.geolocation){ alert('Геолокацията не е поддържана в този браузър.'); return; }
+      navigator.geolocation.getCurrentPosition(function(pos){
+        const lat = pos.coords.latitude, lon = pos.coords.longitude;
+        const locationUrl = 'https://www.google.com/maps?q=' + lat + ',' + lon;
+        if(/Mobi|Android/i.test(navigator.userAgent)){
+          window.location.href = 'sms:0887999175?body=' + encodeURIComponent('Нуждая се от помощ! Моята локация: ' + locationUrl);
+        } else {
+          navigator.clipboard?.writeText(locationUrl).then(
+            ()=> alert('Локацията е копирана. Изпратете я на 0887 999 175.'),
+            ()=> alert('Копирайте локацията: ' + locationUrl)
+          );
+        }
+      }, ()=> alert('Моля, разрешете достъп до локацията.'));
+    };
 
+    // Calculation logic (kept from your original, with minor UI sync)
     function calculate(){
       const distance = parseFloat(document.getElementById('distance').value) || 0;
       const service = document.getElementById('serviceType').value;
@@ -286,15 +404,39 @@
       let breakdown = '';
       breakdown += `<div class="breakdown-item"><span>Базова цена (две посоки, без ДДС)</span><span>${base.toFixed(2)} €<br>(${(base*RATE).toFixed(2)} лв)</span></div>`;
 
-      if(document.getElementById('noHook').checked){ total += 5; breakdown += `<div class="breakdown-item"><span>Такса за липса на кука</span><span>5.00 €<br>(${(5*RATE).toFixed(2)} лв)</span></div>`; }
-      const tires = parseInt(document.getElementById('tireCount').value)||0; if(tires>0){ const c = tires*20; total += c; breakdown += `<div class="breakdown-item"><span>Липсваща/блокирала гума (x${tires})</span><span>${c.toFixed(2)} €<br>(${(c*RATE).toFixed(2)} лв)</span></div>`; }
-      const hours = parseInt(document.getElementById('delayHours').value)||0; if(hours>0){ const c = hours*15; total += c; breakdown += `<div class="breakdown-item"><span>Забавяне (x${hours}ч)</span><span>${c.toFixed(2)} €<br>(${(c*RATE).toFixed(2)} лв)</span></div>`; }
-      if(document.getElementById('heavyAccident').checked){ total += 75; breakdown += `<div class="breakdown-item"><span>Тежка катастрофа</span><span>75.00 €<br>(${(75*RATE).toFixed(2)} лв)</span></div>`; }
-      if(document.getElementById('ditch').checked){ total += 75; breakdown += `<div class="breakdown-item"><span>Изваждане от канавка</span><span>75.00 €<br>(${(75*RATE).toFixed(2)} лв)</span></div>`; }
+      if(document.getElementById('noHook').checked){
+        total += 5;
+        breakdown += `<div class="breakdown-item"><span>Такса за липса на кука</span><span>5.00 €<br>(${(5*RATE).toFixed(2)} лв)</span></div>`;
+      }
 
+      const tires = parseInt(document.getElementById('tireCount').value)||0;
+      if(tires>0){
+        const c = tires*20;
+        total += c;
+        breakdown += `<div class="breakdown-item"><span>Липсваща/блокирала гума (x${tires})</span><span>${c.toFixed(2)} €<br>(${(c*RATE).toFixed(2)} лв)</span></div>`;
+      }
 
-      // Нощна надбавка се прилага само ако е избрана ръчно
-      if(document.getElementById('night').checked){ const surcharge = total * 0.30; total += surcharge; breakdown += `<div class="breakdown-item"><span>Нощна надбавка (+30%)</span><span>${surcharge.toFixed(2)} €<br>(${(surcharge*RATE).toFixed(2)} лв)</span></div>`; }
+      const hours = parseInt(document.getElementById('delayHours').value)||0;
+      if(hours>0){
+        const c = hours*15;
+        total += c;
+        breakdown += `<div class="breakdown-item"><span>Забавяне (x${hours}ч)</span><span>${c.toFixed(2)} €<br>(${(c*RATE).toFixed(2)} лв)</span></div>`;
+      }
+
+      if(document.getElementById('heavyAccident').checked){
+        total += 75;
+        breakdown += `<div class="breakdown-item"><span>Тежка катастрофа</span><span>75.00 €<br>(${(75*RATE).toFixed(2)} лв)</span></div>`;
+      }
+      if(document.getElementById('ditch').checked){
+        total += 75;
+        breakdown += `<div class="breakdown-item"><span>Изваждане от канавка</span><span>75.00 €<br>(${(75*RATE).toFixed(2)} лв)</span></div>`;
+      }
+
+      if(document.getElementById('night').checked){
+        const surcharge = total * 0.30;
+        total += surcharge;
+        breakdown += `<div class="breakdown-item"><span>Нощна надбавка (+30%)</span><span>${surcharge.toFixed(2)} €<br>(${(surcharge*RATE).toFixed(2)} лв)</span></div>`;
+      }
 
       breakdown += `<div class="breakdown-item" style="font-weight:800"><span>КРАЙНА ЦЕНА (без ДДС)</span><span>${total.toFixed(2)} €<br>(${(total*RATE).toFixed(2)} лв)</span></div>`;
 
@@ -304,6 +446,10 @@
       document.getElementById('result').style.display = 'block';
       document.getElementById('result').scrollIntoView({behavior:'smooth', block:'center'});
     }
+
+    // Initialize displays
+    setTireCount(0);
+    setDelayHours(0);
   </script>
 </body>
 </html>

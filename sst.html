@@ -76,7 +76,7 @@
           "https://maps.app.goo.gl/SNhyh8RmSehkzkZY0"
         ],
         "areaServed": [
-          {"@type":"Place","name":"Северна скоростна тангента"}
+          {"@type":"Place","name":"Северна скоростна тангента (София)"}
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
@@ -146,19 +146,25 @@
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 42.7,
-          "longitude": 23.3
+          "latitude": 42.71285,
+          "longitude": 23.43341
         },
         "openingHours": "Mo-Su 00:00-23:59",
         "telephone": "+359887999175",
-        "url": "https://roadassistancesofia.bg/sst.html"
+        "url": "https://roadassistancesofia.bg/sst.html",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "EUR",
+          "price": "0.80",
+          "availability": "https://schema.org/InStock"
+        }
       },
       {
         "@type": "Service",
         "name": "Пътна помощ по Северна скоростна тангента",
         "description": "Професионална денонощна пътна помощ, репатрак, транспорт на МПС и аварийна помощ по Северна скоростна тангента 24/7",
         "provider": {"@id": "https://roadassistancesofia.bg/#organization"},
-        "areaServed": {"@type": "Place", "name": "Северна скоростна тангента"},
+        "areaServed": {"@type": "Place", "name": "Северна скоростна тангента (София)"},
         "offers": {
           "@type": "Offer",
           "priceCurrency": "EUR",
@@ -203,7 +209,7 @@
           },
           {
             "@type": "Question",
-            "name": "Как да се свържа с вас за помощ по Северна скоростна тангента?",
+            "name": "Как да се свържете с нас за помощ по Северна скоростна тангента?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Обадете се на 0887 999 175 - работим 24/7. Посочете точната локация по Северна скоростна тангента и вида на проблема. Ще получите бърза помощ и точна информация за цените."
@@ -243,7 +249,7 @@
     .hero::before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:140%;height:140%;
                    background:radial-gradient(circle,rgba(255,107,0,0.06) 0%,transparent 70%);pointer-events:none}
     .hero-content{position:relative;z-index:2;max-width:1100px;padding:2rem}
-    .logo{font-weight:800;font-size:clamp(1.6rem,4.5vw,2.6rem);background:var(--gradient);-webkit-background-clip:text;color:transparent;margin-bottom:.6rem}
+    .logo{font-weight:800;font-size:clamp(3rem,7vw,5.5rem);background:var(--gradient);-webkit-background-clip:text;color:transparent;margin-bottom:.6rem}
     h1{font-size:clamp(1.6rem,4.5vw,2.2rem);margin-bottom:.5rem;line-height:1.1}
     .hero-subtitle{color:var(--accent);margin-bottom:1rem}
 
@@ -294,6 +300,13 @@
       .floating-btn{width:54px;height:54px}
       .areas-grid{grid-template-columns:1fr}
     }
+    
+    /* Navigation */
+.navigation{background:rgba(26,26,46,0.95);padding:1.5rem 1rem;border-bottom:1px solid rgba(255,107,0,0.1)}
+.nav-container{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:1rem;align-items:center}
+.nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center}
+.nav-link{display:inline-block;padding:.8rem 1.2rem;border-radius:8px;background:var(--primary);color:#fff;text-decoration:none;font-weight:600;transition:transform .2s ease}
+.nav-link:hover{transform:translateY(-2px);background:var(--secondary)}
   </style>
 </head>
 <body>
@@ -312,6 +325,21 @@
       <p><a href="https://www.facebook.com/profile.php?id=61572449813260" target="_blank" rel="noopener noreferrer" style="background:#1877F2;color:#fff;padding:.5rem 1rem;border-radius:8px;text-decoration:none;font-weight:700">Следвайте ни във Facebook</a></p>
     </div>
 
+  </section>
+
+  <!-- Navigation -->
+  <section class="navigation" role="navigation" aria-label="Навигация">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="#services" class="nav-link"><i class="fas fa-tools"></i> Услуги</a>
+        <a href="#pricing" class="nav-link"><i class="fas fa-euro-sign"></i> Цени</a>
+        <a href="#gallery" class="nav-link"><i class="fas fa-images"></i> Галерия</a>
+        <a href="#why-title" class="nav-link"><i class="fas fa-star"></i> Защо Нас</a>
+        <a href="#areas" class="nav-link"><i class="fas fa-map-marker-alt"></i> Области</a>
+        <a href="#faq" class="nav-link"><i class="fas fa-question-circle"></i> ЧЗВ</a>
+        <a href="#contact" class="nav-link"><i class="fas fa-phone"></i> Контакт</a>
+      </div>
+    </div>
   </section>
 
   <!-- Services -->
@@ -374,7 +402,7 @@
     <div class="features">
       <div class="features-intro" style="text-align:center">
         <h3 style="color:var(--accent)">Вашият Надежден Партньор на Пътя</h3>
-        <p style="color:#e0e0e0">Годинен опит, модерна техника и професионален екип на ваше разположение 24/7</p>
+        <p style="color:#e0e0e0">Опит, модерна техника и професионален екип на ваше разположение 24/7</p>
       </div>
       <div class="features-grid">
         <div class="feature-item"><div class="feature-icon"><i class="fas fa-file-invoice"></i></div><strong>Фактури на Място</strong><p>Издаваме документи веднага</p></div>
@@ -416,7 +444,7 @@
         </div>
       </details>
       <details class="faq-item">
-        <summary>Как да се свържа с вас за помощ по Северна скоростна тангента?</summary>
+        <summary>Как да се свържете с нас за помощ по Северна скоростна тангента?</summary>
         <div class="faq-answer">
           <p>Обадете се на 0887 999 175 - работим 24/7. Посочете точната локация по Северна скоростна тангента и вида на проблема. Ще получите бърза помощ и точна информация за цените.</p>
         </div>
@@ -444,7 +472,7 @@
  
 
   <!-- Contact -->
-  <section aria-labelledby="contact-title">
+  <section id="contact" aria-labelledby="contact-title">
     <h2 id="contact-title" class="section-title">Свържете се с нас</h2>
     <div class="contact-section">
       <div class="contact-info" style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
