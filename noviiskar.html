@@ -19,8 +19,12 @@
   <meta property="og:image" content="/images/dark.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="bg_BG" />
+  <meta property="og:site_name" content="Пътна Помощ Борисови Ауто" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="/images/dark.webp" />
+  <meta name="twitter:title" content="Борисови Ауто — Пътна помощ Нови Искър | Репатрак" />
+  <meta name="twitter:description" content="24/7 репатрак и пътна помощ в Нови Искър — пристигане в кратък срок, квалифицирани техници." />
 
   <!-- Geo -->
   <meta name="geo.region" content="BG-22" />
@@ -238,6 +242,26 @@
             }
           }
         ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Pricing / Offer Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": "https://roadassistancesofia.bg/#price-range",
+        "name": "Диапазон цени",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": 40,
+          "highPrice": 500,
+          "priceCurrency": "EUR"
+        }
       }
     ]
   }

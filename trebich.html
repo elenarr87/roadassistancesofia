@@ -232,6 +232,26 @@
   }
   </script>
 
+  <!-- Pricing / Offer Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": "https://roadassistancesofia.bg/#price-range",
+        "name": "Диапазон цени",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": 40,
+          "highPrice": 500,
+          "priceCurrency": "EUR"
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- Single critical CSS block -->
   <style>
 :root{--primary:#FF6B00;--secondary:#1a1a2e;--accent:#FFD700;--light:#f8f9fa;--dark:#0f0f1e;--gradient:linear-gradient(135deg,#FF6B00 0%,#FF8C00 100%);--green:#28a745;--blue:#1877f2}

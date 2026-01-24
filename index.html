@@ -948,9 +948,23 @@ a{color:inherit}
       }, ()=> alert('Моля, разрешете достъп до локацията.'));
     };
   </script>
+
+  <!-- GDPR Cookie Notice -->
+  <div id="gdpr-banner" style="position:fixed;bottom:0;left:0;right:0;background:#333;color:#fff;padding:1rem;text-align:center;z-index:1000;">
+    Този сайт използва бисквитки за подобряване на потребителското изживяване. <a href="#" style="color:#ff6b00;">Научете повече</a> | <button onclick="acceptCookies()" style="background:#ff6b00;color:#fff;border:none;padding:0.5rem 1rem;cursor:pointer;">Приемам</button>
+  </div>
+  <script>
+    function acceptCookies() {
+      document.getElementById('gdpr-banner').style.display = 'none';
+      localStorage.setItem('cookiesAccepted', 'true');
+    }
+    if (localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('gdpr-banner').style.display = 'none';
+    }
+  </script>
+
 </body>
 </html>
-
 
 
 

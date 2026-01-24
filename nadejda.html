@@ -23,6 +23,8 @@
   <meta property="og:site_name" content="Пътна Помощ Борисови Ауто" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="/images/dark.webp" />
+  <meta name="twitter:title" content="Борисови Ауто — Пътна помощ Надежда | Репатрак" />
+  <meta name="twitter:description" content="Репатрак и сервизна помощ в Надежда — диагностика и отстраняване на проблеми." />
 
   <!-- Geo -->
   <meta name="geo.region" content="BG-22" />
@@ -228,6 +230,26 @@
             }
           }
         ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Pricing / Offer Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": "https://roadassistancesofia.bg/#price-range",
+        "name": "Диапазон цени",
+        "offers": {
+          "@type": "AggregateOffer",
+          "lowPrice": 40,
+          "highPrice": 500,
+          "priceCurrency": "EUR"
+        }
       }
     ]
   }

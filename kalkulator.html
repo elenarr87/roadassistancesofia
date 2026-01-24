@@ -16,8 +16,14 @@
   <meta property="og:title" content="Калкулатор — Пътна помощ (без ДДС)">
   <meta property="og:description" content="Калкулатор за цена на репатрак — всички цени са за двете посоки и без ДДС. Възможно плащане: POS, Revolut.">
   <meta property="og:image" content="https://roadassistancesofia.bg/images/dark.avif">
-  <meta property="og:url" content="https://roadassistancesofia.bg/kalkulator.html">
-  <meta property="og:type" content="website">
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="bg_BG" />
+  <meta property="og:site_name" content="Пътна Помощ Борисови Ауто" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Калкулатор — Пътна помощ (без ДДС)" />
+  <meta name="twitter:description" content="Калкулатор за цена на репатрак — всички цени са за двете посоки и без ДДС." />
+  <meta name="twitter:image" content="https://roadassistancesofia.bg/images/dark.avif" />
 
   <!-- FontAwesome Icons (local) -->
   <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
@@ -451,10 +457,65 @@
     setTireCount(0);
     setDelayHours(0);
   </script>
+
+  <!-- FAQ Section -->
+  <section class="faq-container" style="padding:2rem 1rem;max-width:800px;margin:2rem auto;">
+    <h2 style="text-align:center;color:var(--accent);margin-bottom:1rem;">Често задавани въпроси</h2>
+    <details class="faq-item">
+      <summary>Как да използвам калкулатора?</summary>
+      <div class="faq-answer" style="padding:1rem;">
+        <p>Изберете типа услуга, въведете теглото на автомобила, разстоянието и допълнителните опции. Калкулаторът автоматично ще изчисли цената без ДДС.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Какви са цените?</summary>
+      <div class="faq-answer" style="padding:1rem;">
+        <p>Цените започват от 40 EUR за МПС до 1500 кг (0.80 EUR/км). За по-тежки автомобили цените са по-високи. Нощна такса +30%.</p>
+      </div>
+    </details>
+    <details class="faq-item">
+      <summary>Какво включва цената?</summary>
+      <div class="faq-answer" style="padding:1rem;">
+        <p>Цената включва транспорта в двете посоки. Допълнителни услуги като смяна на гума се таксуват отделно.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Как да използвам калкулатора?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Изберете типа услуга, въведете теглото на автомобила, разстоянието и допълнителните опции. Калкулаторът автоматично ще изчисли цената без ДДС."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какви са цените?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Цените започват от 40 EUR за МПС до 1500 кг (0.80 EUR/км). За по-тежки автомобили цените са по-високи. Нощна такса +30%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какво включва цената?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Цената включва транспорта в двете посоки. Допълнителни услуги като смяна на гума се таксуват отделно."
+        }
+      }
+    ]
+  }
+  </script>
+
 </body>
-</html>
-
-
-
+</html> 
 
 

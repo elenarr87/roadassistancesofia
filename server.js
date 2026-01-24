@@ -1,8 +1,9 @@
+const https = require('https');
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const server = http.createServer((req, res) => {
+const requestHandler = (req, res) => {
   let filePath = path.join(__dirname, req.url === '/' ? 'index.html' : req.url);
   fs.readFile(filePath, (err, data) => {
     if (err) {
@@ -62,8 +63,21 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': contentType });
     res.end(data);
   });
-});
+};
 
-server.listen(8000, () => {
-  console.log('Server running at http://localhost:8000/');
+let server;
+let protocol = 'http';
+let port = 8000;
+
+if (fs.existsSync('key.pem') && fs.existsSync('cert.pem')) {
+  const options = {
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem')
+  };
+  server = https.createServer(options, requestHandler);
+  protocol = 'https';
+} else {
+  server = http.createServer(requestHandler);
+server.listen(port, () => {
+  console.log(`Server running at ${protocol}://localhost:${port}/`);
 });
